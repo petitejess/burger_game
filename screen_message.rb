@@ -27,7 +27,7 @@ class ScreenMessage
       msg
     end
 
-    puts msg_box
+    msg_box
   end
   
   def display_welcome
@@ -50,6 +50,6 @@ class ScreenMessage
 end
 
 msg = ScreenMessage.new
-msg.display_welcome
-msg.display_instructions
-msg.display_prologue
+puts msg.display_welcome
+puts msg.display_instructions
+puts msg.display_prologue

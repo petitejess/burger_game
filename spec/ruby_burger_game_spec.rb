@@ -8,18 +8,15 @@ describe ScreenMessage do
     @screen_message = ScreenMessage.new
   end
 
-  it 'should display a welcome message' do
-    message = "Hello"
-    expect(@screen_message.display_welcome).to eq(message)
+  it 'check if display_welcome is defined' do
+    expect(@screen_message.display_welcome.class).to eq(String)
   end
 
-  it 'should display a How to Play instructions message' do
-    message = "How to Play"
-    expect(@screen_message.display_instructions).to eq(message)
+  it 'check if display_instructions is defined' do
+    expect(@screen_message.display_instructions.class).to eq(String)
   end
 
-  it 'should display a prologue message' do
-    message = "Prologue"
-    expect(@screen_message.display_prologue).to eq(message)
+  it 'check if display_prologue is defined' do
+    expect(@screen_message.display_prologue.class).to eq(String)
   end
 end
