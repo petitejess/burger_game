@@ -1,32 +1,40 @@
+# Import Gems
+require 'tty-prompt'
+
 require_relative './screen_message'
 
 # Create instance from ScreenMessage class
 screen = ScreenMessage.new
 
+# Create instance of TTY Prompt
+prompt = TTY::Prompt.new
+
 # Feature 1
-loop do
-  puts screen.display_welcome
-  
-  user_input = gets.strip
-  break if user_input == 'next'
-end
+puts
+puts screen.display_welcome
+screen.go_to_next
+user_input = gets.strip
 
 loop do
-  puts "Do you want to view the game instructions? Type 'next' to skip."
-  user_input = gets.strip
-  break if user_input == 'next'
+  puts
+  user_input = prompt.select("What would you like to do?") do |menu|
+    menu.choice "View 'How to Play'"
+    menu.choice "Start Game"
+  end
+
+  break if user_input == "Start Game"
 
   # Show instructions
+  puts
   puts screen.display_instructions
   
+  screen.go_to_next
   user_input = gets.strip
-  break if user_input == 'next'
 end
 
-loop do
-  # Show prologue
-  puts screen.display_prologue
+# Show prologue
+puts
+puts screen.display_prologue
 
-  user_input = gets.strip
-  break if user_input == 'next'
-end
+screen.go_to_next
+user_input = gets.strip
