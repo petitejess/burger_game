@@ -1,4 +1,4 @@
-# Import TTY Gems
+# Import Gems
 require 'tty-box'
 require 'tty-screen'
 
@@ -52,8 +52,3 @@ class ScreenMessage
     msg_frame(title, msg, height)
   end
 end
-
-msg = ScreenMessage.new
-puts msg.display_welcome
-puts msg.display_instructions
-puts msg.display_prologue
