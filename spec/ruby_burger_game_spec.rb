@@ -1,5 +1,5 @@
-require_relative '../main.rb'
-require_relative '../screen_message.rb'
+require_relative '../main'
+require_relative '../screen_message'
 
 # Test case for Feature 1
 describe ScreenMessage do
