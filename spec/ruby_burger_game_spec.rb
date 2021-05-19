@@ -51,4 +51,10 @@ describe PlayerOption do
   it "should display player's options" do
     expect(@options.display_options.class).to eq(String)
   end
+
+  it "check option's quantity input should be within range" do
+    max = 5
+    item = "Bun"
+    expect(@options.get_quantity(item)).to be < max
+  end
 end
