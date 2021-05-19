@@ -1,6 +1,7 @@
 require_relative '../main'
 require_relative '../screen_message'
 require_relative '../recipe'
+require_relative '../player_option'
 
 # # Test case for Feature 1
 # describe ScreenMessage do
@@ -48,6 +49,6 @@ describe PlayerOption do
   end
 
   it "should display player's options" do
-    expect(@options.display_options).to eq(String)
+    expect(@options.display_options.class).to eq(String)
   end
 end
