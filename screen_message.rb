@@ -3,7 +3,6 @@ require 'tty-box'
 require 'tty-screen'
 
 class ScreenMessage
-
   def initialize
   end
 
