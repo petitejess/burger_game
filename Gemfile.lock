@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    colorize (0.8.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
     strings (0.2.1)
@@ -30,6 +31,7 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  colorize (~> 0.8.1)
   tty-box (~> 0.7.0)
   tty-prompt (~> 0.23.1)
   tty-screen (~> 0.8.1)
