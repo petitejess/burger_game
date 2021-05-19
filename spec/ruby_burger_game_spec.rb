@@ -34,4 +34,8 @@ describe Recipe do
   it "should display the recipe" do
     expect(@recipe.display_recipe.class).to eq(String)
   end
+
+  it "should return the recipe ingredients" do
+    expect(@recipe.get_ingredients(@name)).to eq(@ingredients)
+  end
 end
