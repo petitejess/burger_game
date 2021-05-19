@@ -1,5 +1,6 @@
 require_relative '../main'
 require_relative '../screen_message'
+require_relative '../recipe'
 
 # Test case for Feature 1
 describe ScreenMessage do
@@ -26,11 +27,11 @@ describe Recipe do
   # This block runs before each test case defined in 'it' block
   before(:each) do
     @name = "Basic Burger"
-    @ingredients = [["Bun", 1], ["Tomato Sauce", 1], ["Lettuce", 1], ["Grilled Chicken", 2], ["Cheese", 1], ["Bun", 1]]
+    @ingredients = [{ "Bun" => 1 }, { "Tomato Sauce" => 1 }, { "Lettuce" => 1 }, { "Grilled Chicken" => 2 }, { "Cheese" => 1 }, { "Bun" => 1 }]
     @recipe = Recipe.new(@name, @ingredients)
   end
 
   it "should display the recipe" do
-    expect(@recipe.display_recipe).to eq(String)
+    expect(@recipe.display_recipe.class).to eq(String)
   end
 end
