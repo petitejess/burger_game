@@ -43,10 +43,29 @@ require_relative '../player_option'
 # end
 
 # Test case for MAIN FEATURES: Feature 4
+describe SelectedItem do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    @item = "Tomato Sauce"
+    @quantity = 2
+    @selected_item = SelectedItem.new(@item, @quantity)
+  end
+
+  it "should return quantity of the selected item from options" do
+    expect(@selected_item.quantity).to be(@quantity)
+  end
+
+  it "should return the item selected" do
+    expect(@selected_item.item).to eq(@item)
+  end
+end
+
 describe PlayerOption do
   # This block runs before each test case defined in 'it' block
   before(:each) do
     options = ["Bun", "Tomato Sauce", "Lettuce", "Grilled Chicken", "Cheese"]
+    @item = "Bun"
+    @quantity = 2
     @options = PlayerOption.new(options)
   end
 
@@ -54,18 +73,8 @@ describe PlayerOption do
     expect(@options.display_options.class).to eq(String)
   end
 
-  # it "check option's quantity input should be within range" do
-  #   max = 5
-  #   item = "Bun"
-  #   expect(@options.get_quantity(item)).to be < max
-  # end
-end
-
-describe SelectedItem do
-  it "should return quantity of the selected item from options" do
-    item = "Bun"
-    quantity = 1
-    selected_item = SelectedItem.new(item, quantity)
-    expect(selected_item.quantity).to be(quantity)
+  it "should get the quantity entered for selected item" do
+    @options.add_selected(@item, @quantity)
+    expect(@options.get_quantity(@item)).to be(@quantity)
   end
 end
