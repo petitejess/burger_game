@@ -1,6 +1,7 @@
 require_relative '../main'
 require_relative '../screen_message'
 require_relative '../recipe'
+require_relative '../selected_item'
 require_relative '../player_option'
 
 # # Test case for Feature 1
