@@ -4,7 +4,7 @@ require 'colorize'
 
 class Recipe
   # Constant variables for available recipes for the menu
-  RECIPE_NAMES = ["Normal Burger", "Mirror-It Burger", "Hell Burger"]
+  RECIPE_NAMES = ["Normal Burger", "Healthy Burger", "Questionable Burger"]
   INGREDIENTS = ["Bun", "Tomato Sauce", "Lettuce", "Grilled Chicken", "Cheese"]
   RECIPES = [{ RECIPE_NAMES[0] =>
               [{ INGREDIENTS[0] => 1 },
@@ -18,21 +18,15 @@ class Recipe
               [{ INGREDIENTS[0] => 1 },
               { INGREDIENTS[4] => 1 },
               { INGREDIENTS[1] => 1 },
-              { INGREDIENTS[2] => 1 },
               { INGREDIENTS[3] => 2 },
-              { INGREDIENTS[1] => 1 },
-              { INGREDIENTS[2] => 1 },
-              { INGREDIENTS[4] => 1 },
+              { INGREDIENTS[2] => 3 },
               { INGREDIENTS[0] => 1 }]
             },
             { RECIPE_NAMES[2] =>
-              [{ INGREDIENTS[1] => 4 },
+              [{ INGREDIENTS[0] => 1 },
               { INGREDIENTS[4] => 3 },
-              { INGREDIENTS[0] => 1 },
               { INGREDIENTS[1] => 4 },
-              { INGREDIENTS[3] => 5 },
-              { INGREDIENTS[4] => 1 },
-              { INGREDIENTS[1] => 4 },
+              { INGREDIENTS[3] => 4 },
               { INGREDIENTS[2] => 2 },
               { INGREDIENTS[0] => 1 }]
             }

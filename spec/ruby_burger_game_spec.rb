@@ -3,6 +3,7 @@ require_relative '../screen_message'
 require_relative '../recipe'
 require_relative '../selected_item'
 require_relative '../player_option'
+require_relative '../customer_request'
 
 # # Test case for Feature 1
 describe ScreenMessage do
@@ -30,6 +31,15 @@ describe Recipe do
     recipe = Recipe.new
     recipe_no = 1
     expect(recipe.display_recipe(recipe_no).class).to eq(String)
+  end
+end
+
+# Test case for Feature 3
+describe CustomerRequest do
+  it "should display customer request" do
+    customer = CustomerRequest.new
+    customer_no = 0
+    expect(customer.display_request(customer_no).class).to eq(String)
   end
 end
 
