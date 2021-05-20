@@ -29,7 +29,7 @@ class PlayerOption
     loop do
       # Loop through ingredients for player to choose
       puts
-      item = prompt.select("What would you like to add?") do |item|
+      item = prompt.select("What would you like to add? (stack from bottom up)") do |item|
         Recipe::INGREDIENTS.each do |ingredient|
           item.choice ingredient
         end
