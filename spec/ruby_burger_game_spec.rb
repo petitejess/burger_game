@@ -5,6 +5,7 @@ require_relative '../selected_item'
 require_relative '../player_option'
 require_relative '../customer_request'
 require_relative '../score_comparison'
+require_relative '../game_state'
 
 # # Test case for Feature 1
 describe ScreenMessage do
@@ -76,9 +77,9 @@ describe PlayerOption do
     @player_selections = PlayerOption.new
   end
 
-  it "should get player's options" do
-    expect(@player_selections.get_options.class).to eq(Array)
-  end
+  # it "should get player's options" do
+  #   expect(@player_selections.get_options.class).to eq(Array)
+  # end
 end
 
 # Test case for MAIN FEATURES: Feature 5
@@ -97,5 +98,15 @@ describe ScoreComparison do
 
   it "should get correct customer mood" do
     expect(@compare.get_mood).to eq("neutral")
+  end
+end
+
+describe GameState do
+  it "should get current money level" do
+    expect(GameState.current_money).to be(0)
+  end
+
+  it "should get current reputation level" do
+    expect(GameState.current_reputation).to be(10)
   end
 end

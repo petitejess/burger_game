@@ -2,7 +2,6 @@
 require 'tty-prompt'
 
 require_relative './recipe'
-require_relative './selected_item'
 
 class PlayerOption
   def initialize
