@@ -1,5 +1,6 @@
 require_relative './customer_request'
 require_relative './player_option'
+require_relative './game_state'
 
 class ScoreComparison
   # Constant variable for max score and threshold
@@ -29,7 +30,6 @@ class ScoreComparison
     # 6 happy
     # 3-5 neutral
     # <2 || >6 angry
-    
     get_score
     if (@score <= MAX_SCORE)
       if (@score == MAX_SCORE)
@@ -42,5 +42,25 @@ class ScoreComparison
     else
       "angry"
     end
+  end
+
+  def calculate_state
+    mood = get_mood
+    money = GameState.current_money
+    reputation = GameState.current_reputation
+    max_reputation = GameState::MAX_REPUTATION
+
+    if mood == "happy"
+      money += 10
+      if reputation < max_reputation
+        reputation += 1
+      end
+    elsif mood == "neutral"
+      money += 5
+    else
+      reputation -= 1
+    end
+    
+    return money, reputation
   end
 end

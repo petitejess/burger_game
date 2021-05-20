@@ -20,7 +20,7 @@ class CustomerRequest
                     "   Unicorn   ",
                     "   A. Robot   "]
 
-  CUSTOMER_PREFERENCES = [{ "Thank you!" => [] },
+  CUSTOMER_PREFERENCES = [{ "no cheese, thank you!" => [{ Recipe::INGREDIENTS[4] => 0 }]},
                           { "one extra patty please!" => [{ Recipe::INGREDIENTS[3] => 5 }]},
                           { "no veggie please!" => [{ Recipe::INGREDIENTS[2] => 0 }]},
                           { "no chicken please!" => [{ Recipe::INGREDIENTS[3] => 0 }]},
@@ -45,15 +45,17 @@ class CustomerRequest
                       ]
 
   def get_request(customer_no)
-    all_recipes= Recipe::RECIPES # => array of all available recipes (hash of hashes)
+    all_recipes = Recipe::RECIPES # => array of all available recipes (hash of hashes)
     requested_recipe_name = CUSTOMER_REQUESTS[customer_no][1] # => recipe name (string)
 
     # Get requested actual recipe (array of hashes)
     actual_recipe = []
     all_recipes.each do |recipe|
-      actual_recipe = recipe[requested_recipe_name]
+      if recipe.keys.join == requested_recipe_name
+        actual_recipe = recipe[requested_recipe_name]
+      end
     end
-    
+
     # Variable to hold hash of customer preference (array with single hash)
     requested_preference = []
     CUSTOMER_PREFERENCES[customer_no].each { |text, preference| requested_preference = preference }
@@ -64,7 +66,8 @@ class CustomerRequest
 
     # 2. Replace quantity value of the line in actual recipe which key matches preference ingredient name
     customer_recipe = actual_recipe.dup
-    customer_recipe.each do |line, |
+
+    customer_recipe.each do |line|
       if line.keys == requested_preference[0].keys
         line[ingredient] = requested_preference[0][ingredient]
       end
@@ -80,8 +83,7 @@ class CustomerRequest
 
     # Put all string output lines in a variable
     request_text = "Can I have \"" + customer_request[1] + "\" today?\n"
-    preference_prefix = customer_request[2].values[0].empty? ? "" : "With "
-    request_text += preference_prefix + customer_request[2].keys[0]
+    request_text += "With " + customer_request[2].keys[0]
 
     # Format output using frame
     dialog_box.msg_frame(customer_request[0], request_text)

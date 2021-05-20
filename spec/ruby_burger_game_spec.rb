@@ -102,11 +102,19 @@ describe ScoreComparison do
 end
 
 describe GameState do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    player_recipe = [{ "Bun" => 1 }, { "Lettuce" => 2}, { "Grilled Chicken" => 2 }, { "Tomato Sauce" => 4 }, { "Cheese" => 3 }]
+    customer_no = 1
+    customer = CustomerRequest.new
+    @compare = ScoreComparison.new(player_recipe, customer.get_request(customer_no))
+  end
+
   it "should get current money level" do
-    expect(GameState.current_money).to be(0)
+    expect(@compare.calculate_state[0]).to be(5)
   end
 
   it "should get current reputation level" do
-    expect(GameState.current_reputation).to be(10)
+    expect(@compare.calculate_state[1]).to be(10)
   end
 end

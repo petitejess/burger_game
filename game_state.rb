@@ -1,10 +1,10 @@
 class GameState
   # Constant variables to hold target money and max reputation for gameplay
   TARGET_MONEY = 50
-  MAX_REPUTAION = 10
+  MAX_REPUTATION = 10
 
   @@current_money = 0
-  @@current_reputation = MAX_REPUTAION
+  @@current_reputation = MAX_REPUTATION
 
   def initialize
   end
