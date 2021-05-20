@@ -44,6 +44,37 @@ class CustomerRequest
                        [CUSTOMER_NAMES[9], Recipe::RECIPE_NAMES[0], CUSTOMER_PREFERENCES[9]]
                       ]
 
+  def get_request(customer_no)
+    all_recipes= Recipe::RECIPES # => array of all available recipes (hash of hashes)
+    requested_recipe_name = CUSTOMER_REQUESTS[customer_no][1] # => recipe name (string)
+
+    # Get requested actual recipe (array of hashes)
+    actual_recipe = []
+    all_recipes.each do |recipe|
+      actual_recipe = recipe[requested_recipe_name]
+    end
+    
+    # Variable to hold hash of customer preference (array with single hash)
+    requested_preference = []
+    CUSTOMER_PREFERENCES[customer_no].each { |text, preference| requested_preference = preference }
+
+    
+    # Replace actual recipe with customer preference:
+    # 1. Get preference ingredient name (string)
+    ingredient = requested_preference[0].keys.join
+
+    # 2. Replace quantity value of the line in actual recipe which key matches preference ingredient name
+    customer_recipe = actual_recipe.dup
+    customer_recipe.each do |line, |
+      if line.keys == requested_preference[0].keys
+        line[ingredient] = requested_preference[0][ingredient]
+      end
+    end
+    
+    # Array of ingredient-quantity hashes
+    customer_recipe
+  end
+
   def display_request(customer_no)
     dialog_box = ScreenMessage.new
     customer_request = CUSTOMER_REQUESTS[customer_no]

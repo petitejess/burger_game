@@ -4,6 +4,7 @@ require_relative '../recipe'
 require_relative '../selected_item'
 require_relative '../player_option'
 require_relative '../customer_request'
+require_relative '../score_comparison'
 
 # # Test case for Feature 1
 describe ScreenMessage do
@@ -67,7 +68,22 @@ describe PlayerOption do
     @player_selections = PlayerOption.new
   end
 
-  it "should get player's options" do
-    expect(@player_selections.get_options.class).to eq(Array)
+  # it "should get player's options" do
+  #   expect(@player_selections.get_options.class).to eq(Array)
+  # end
+end
+
+# Test case for MAIN FEATURES: Feature 5
+describe ScoreComparison do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    player_recipe = [{ "Bun" => 1 }, { "Lettuce" => 2}, { "Grilled Chicken" => 2 }, { "Tomato Sauce" => 4 }, { "Cheese" => 3 }]
+    customer_no = 1
+    customer = CustomerRequest.new
+    @compare = ScoreComparison.new(player_recipe, customer.get_request(customer_no))
+  end
+
+  it "should calculate score for player input and customer request comparison" do
+    expect(@compare.get_score).to be(4)
   end
 end
