@@ -1,6 +1,3 @@
-# Import Gems
-require 'tty-box'
-
 require_relative './recipe'
 require_relative './screen_message'
 

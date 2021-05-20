@@ -1,6 +1,7 @@
 # Import Gems
-require 'tty-box'
 require 'colorize'
+
+require_relative './screen_message'
 
 class Recipe
   # Constant variables for available recipes for the menu
@@ -32,42 +33,23 @@ class Recipe
             }
           ]
 
-  # Constant variable for display formatting space
-  SPACING = 30
-
   def initialize
   end
 
-  # Method for displaying recipe frame
-  def recipe_frame(recipe)
-    recipe_box = TTY::Box.frame({
-      enable_color: true, # force to always color output
-      width: SPACING + 10,
-      align: :center,
-      padding: 3,
-      style: {
-        border: {
-          fg: :white
-        }
-      }
-    }) do
-      recipe
-    end
-
-    recipe_box
-  end
-
   def display_recipe(recipe_index)
+    recipe_box = ScreenMessage.new
+    spacing = ScreenMessage::SPACING
+
     # Put all string output lines in a variable
-    recipe = RECIPE_NAMES[recipe_index].center(SPACING, " ").upcase + "\n\n" + "*".colorize(:blue) * SPACING + "\n\n"
+    recipe = RECIPE_NAMES[recipe_index].center(spacing, " ").upcase + "\n\n" + "*".colorize(:blue) * spacing + "\n\n"
 
     RECIPES[recipe_index][RECIPE_NAMES[recipe_index]].each do |list|
       list.each do |item, quantity|
-        recipe += "#{item}".rjust(SPACING * 0.6) + " x #{quantity}".ljust(SPACING * 0.4) + "\n"
+        recipe += "#{item}".rjust(spacing * 0.6) + " x #{quantity}".ljust(spacing * 0.4) + "\n"
       end
     end
 
     # Format output using frame
-    recipe_frame(recipe)
+    recipe_box.recipe_frame(recipe)
   end
 end

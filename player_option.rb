@@ -12,7 +12,7 @@ class PlayerOption
     prompt = TTY::Prompt.new
 
     # Variable to collect user input of item and quntity
-    player_selections = []
+    player_recipe = []
 
     # Loop prompt until player done selecting ingredients
     loop do
@@ -43,9 +43,9 @@ class PlayerOption
       end
 
       # Collect player's selections
-      player_selections << { item => quantity.to_i }
+      player_recipe << { item => quantity.to_i }
     end
 
-    player_selections
+    player_recipe
   end
 end

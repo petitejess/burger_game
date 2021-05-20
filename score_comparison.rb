@@ -26,15 +26,14 @@ class ScoreComparison
     @score
   end
 
-  def get_mood
+  def get_mood(score)
     # 6 happy
     # 3-5 neutral
     # <2 || >6 angry
-    get_score
-    if (@score <= MAX_SCORE)
-      if (@score == MAX_SCORE)
+    if (score <= MAX_SCORE)
+      if (score == MAX_SCORE)
         "happy"
-      elsif (@score >= THRESHOLD)
+      elsif (score >= THRESHOLD)
         "neutral"
       else
         "angry"
@@ -44,21 +43,21 @@ class ScoreComparison
     end
   end
 
-  def calculate_state
-    mood = get_mood
+  def calculate_state(mood)
     money = GameState.current_money
     reputation = GameState.current_reputation
     max_reputation = GameState::MAX_REPUTATION
+    payment = GameState::PAYMENT
 
     if mood == "happy"
-      money += 10
+      GameState.update_money(payment)
       if reputation < max_reputation
-        reputation += 1
+        GameState.update_reputation(1)
       end
     elsif mood == "neutral"
-      money += 5
+      GameState.update_money(payment / 2)
     else
-      reputation -= 1
+      GameState.update_reputation(-1)
     end
     
     return money, reputation

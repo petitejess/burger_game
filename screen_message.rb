@@ -3,6 +3,9 @@ require 'tty-box'
 require 'tty-screen'
 
 class ScreenMessage
+  # Constant variable for display formatting space
+  SPACING = 30
+
   def initialize
   end
 
@@ -32,6 +35,25 @@ class ScreenMessage
     end
 
     msg_box
+  end
+
+  # Method for displaying recipe frame
+  def recipe_frame(recipe)
+    recipe_box = TTY::Box.frame({
+      enable_color: true, # force to always color output
+      width: SPACING + 10,
+      align: :center,
+      padding: 3,
+      style: {
+        border: {
+          fg: :white
+        }
+      }
+    }) do
+      recipe
+    end
+
+    recipe_box
   end
   
   def display_welcome

@@ -54,22 +54,22 @@ describe CustomerRequest do
 end
 
 # Test case for MAIN FEATURES: Feature 4
-describe SelectedItem do
-  # This block runs before each test case defined in 'it' block
-  before(:each) do
-    @item = "Tomato Sauce"
-    @quantity = 2
-    @selected_item = SelectedItem.new(@item, @quantity)
-  end
+# describe SelectedItem do
+#   # This block runs before each test case defined in 'it' block
+#   before(:each) do
+#     @item = "Tomato Sauce"
+#     @quantity = 2
+#     @selected_item = SelectedItem.new(@item, @quantity)
+#   end
 
-  it "should return quantity of the selected item from options" do
-    expect(@selected_item.quantity).to be(@quantity)
-  end
+#   it "should return quantity of the selected item from options" do
+#     expect(@selected_item.quantity).to be(@quantity)
+#   end
 
-  it "should return the item selected" do
-    expect(@selected_item.item).to eq(@item)
-  end
-end
+#   it "should return the item selected" do
+#     expect(@selected_item.item).to eq(@item)
+#   end
+# end
 
 describe PlayerOption do
   # This block runs before each test case defined in 'it' block
@@ -97,7 +97,7 @@ describe ScoreComparison do
   end
 
   it "should get correct customer mood" do
-    expect(@compare.get_mood).to eq("neutral")
+    expect(@compare.get_mood(@compare.get_score)).to eq("neutral")
   end
 end
 
@@ -108,13 +108,18 @@ describe GameState do
     customer_no = 1
     customer = CustomerRequest.new
     @compare = ScoreComparison.new(player_recipe, customer.get_request(customer_no))
+    @game_state = GameState.new
   end
 
   it "should get current money level" do
-    expect(@compare.calculate_state[0]).to be(5)
+    expect(@compare.calculate_state(@compare.get_mood(@compare.get_score))[0]).to be(5)
   end
 
   it "should get current reputation level" do
-    expect(@compare.calculate_state[1]).to be(10)
+    expect(@compare.calculate_state(@compare.get_mood(@compare.get_score))[1]).to be(10)
+  end
+
+  it "should display game state" do
+    expect(@game_state.display_game_state.class).to eq(String)
   end
 end
