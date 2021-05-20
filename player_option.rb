@@ -43,10 +43,18 @@ class PlayerOption
 
       # Ask for quantity
       puts "How many \"#{item}\"? (Enter 0 to 5)"
-      quantity = gets.strip.to_i
+      # Quantity input validation loop
+      while quantity = gets.strip do
+        # Must be a whole number 0 to 5
+        if (quantity =~ /^[0-5]$/)
+          break
+        else
+          puts "Please enter a number from 0 to 5:"
+        end
+      end
 
       # Collect player's selections
-      player_selections << { item => quantity }
+      player_selections << { item => quantity.to_i }
     end
 
     player_selections
