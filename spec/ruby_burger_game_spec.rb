@@ -37,10 +37,18 @@ end
 
 # Test case for MAIN FEATURES: Feature 3
 describe CustomerRequest do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    @customer = CustomerRequest.new
+    @customer_no = 1
+  end
   it "should display customer request" do
-    customer = CustomerRequest.new
-    customer_no = 0
-    expect(customer.display_request(customer_no).class).to eq(String)
+    expect(@customer.display_request(@customer_no).class).to eq(String)
+  end
+
+  it "should display customer response" do
+    mood = "angry"
+    expect(@customer.display_response(@customer_no, mood).class).to eq(String)
   end
 end
 

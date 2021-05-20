@@ -57,7 +57,6 @@ class CustomerRequest
     # Variable to hold hash of customer preference (array with single hash)
     requested_preference = []
     CUSTOMER_PREFERENCES[customer_no].each { |text, preference| requested_preference = preference }
-
     
     # Replace actual recipe with customer preference:
     # 1. Get preference ingredient name (string)
@@ -86,5 +85,23 @@ class CustomerRequest
 
     # Format output using frame
     dialog_box.msg_frame(customer_request[0], request_text)
+  end
+
+  def display_response(customer_no, mood)
+    dialog_box = ScreenMessage.new
+    customer_request = CUSTOMER_REQUESTS[customer_no]
+    response = ""
+
+    response = case mood
+                when "happy"
+                  "Delicious! You're the best! Here take my money!"
+                when "neutral"
+                  "Hmm... The food here is not worth the price..."
+                else
+                  "GRRRRR!! What is THIS?! I don't even!! I hope you close down!!"
+                end
+
+    # Format output using frame
+    dialog_box.msg_frame(customer_request[0], response)
   end
 end
