@@ -2,6 +2,10 @@ require_relative './customer_request'
 require_relative './player_option'
 
 class ScoreComparison
+  # Constant variable for max score and threshold
+  MAX_SCORE = 6
+  THRESHOLD = 3
+
   def initialize(player_recipe, customer_recipe)
     @player_recipe = player_recipe
     @customer_recipe = customer_recipe
@@ -19,5 +23,24 @@ class ScoreComparison
     end
 
     @score
+  end
+
+  def get_mood
+    # 6 happy
+    # 3-5 neutral
+    # <2 || >6 angry
+    
+    get_score
+    if (@score <= MAX_SCORE)
+      if (@score == MAX_SCORE)
+        "happy"
+      elsif (@score >= THRESHOLD)
+        "neutral"
+      else
+        "angry"
+      end
+    else
+      "angry"
+    end
   end
 end

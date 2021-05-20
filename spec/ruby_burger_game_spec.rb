@@ -35,7 +35,7 @@ describe Recipe do
   end
 end
 
-# Test case for MAIN FEATURES: Feature 3
+# Test case for Feature 3
 describe CustomerRequest do
   # This block runs before each test case defined in 'it' block
   before(:each) do
@@ -76,9 +76,9 @@ describe PlayerOption do
     @player_selections = PlayerOption.new
   end
 
-  # it "should get player's options" do
-  #   expect(@player_selections.get_options.class).to eq(Array)
-  # end
+  it "should get player's options" do
+    expect(@player_selections.get_options.class).to eq(Array)
+  end
 end
 
 # Test case for MAIN FEATURES: Feature 5
@@ -93,5 +93,9 @@ describe ScoreComparison do
 
   it "should calculate score for player input and customer request comparison" do
     expect(@compare.get_score).to be(4)
+  end
+
+  it "should get correct customer mood" do
+    expect(@compare.get_mood).to eq("neutral")
   end
 end
