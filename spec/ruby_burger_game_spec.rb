@@ -34,7 +34,7 @@ describe Recipe do
   end
 end
 
-# Test case for Feature 3
+# Test case for MAIN FEATURES: Feature 3
 describe CustomerRequest do
   it "should display customer request" do
     customer = CustomerRequest.new
@@ -43,39 +43,31 @@ describe CustomerRequest do
   end
 end
 
-# # Test case for MAIN FEATURES: Feature 4
-# describe SelectedItem do
-#   # This block runs before each test case defined in 'it' block
-#   before(:each) do
-#     @item = "Tomato Sauce"
-#     @quantity = 2
-#     @selected_item = SelectedItem.new(@item, @quantity)
-#   end
+# Test case for MAIN FEATURES: Feature 4
+describe SelectedItem do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    @item = "Tomato Sauce"
+    @quantity = 2
+    @selected_item = SelectedItem.new(@item, @quantity)
+  end
 
-#   it "should return quantity of the selected item from options" do
-#     expect(@selected_item.quantity).to be(@quantity)
-#   end
+  it "should return quantity of the selected item from options" do
+    expect(@selected_item.quantity).to be(@quantity)
+  end
 
-#   it "should return the item selected" do
-#     expect(@selected_item.item).to eq(@item)
-#   end
-# end
+  it "should return the item selected" do
+    expect(@selected_item.item).to eq(@item)
+  end
+end
 
-# describe PlayerOption do
-#   # This block runs before each test case defined in 'it' block
-#   before(:each) do
-#     options = ["Bun", "Tomato Sauce", "Lettuce", "Grilled Chicken", "Cheese"]
-#     @item = "Bun"
-#     @quantity = 2
-#     @options = PlayerOption.new(options)
-#   end
+describe PlayerOption do
+  # This block runs before each test case defined in 'it' block
+  before(:each) do
+    @player_selections = PlayerOption.new
+  end
 
-#   it "should display player's options" do
-#     expect(@options.display_options.class).to eq(String)
-#   end
-
-#   it "should get the quantity entered for selected item" do
-#     @options.add_selected(@item, @quantity)
-#     expect(@options.get_quantity(@item)).to be(@quantity)
-#   end
-# end
+  it "should get player's options" do
+    expect(@player_selections.get_options.class).to eq(Array)
+  end
+end
