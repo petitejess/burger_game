@@ -6,10 +6,9 @@ class GameState
   MAX_REPUTATION = 10
   PAYMENT = 10.0
 
-  @@current_money = 0
-  @@current_reputation = MAX_REPUTATION
-
   def initialize
+    @@current_money = 0
+    @@current_reputation = MAX_REPUTATION
   end
 
   def self.current_money

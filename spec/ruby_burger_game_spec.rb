@@ -7,7 +7,8 @@ require_relative '../customer_request'
 require_relative '../score_comparison'
 require_relative '../game_state'
 
-# # Test case for Feature 1
+# Test case for Feature 1
+# and for MAIN FEATURES: Feature 7
 describe ScreenMessage do
   # This block runs before each test case defined in 'it' block
   before(:each) do
@@ -24,6 +25,14 @@ describe ScreenMessage do
 
   it "check if display_prologue is defined" do
     expect(@screen_message.display_prologue.class).to eq(String)
+  end
+
+  it "check if display_win is defined" do
+    expect(@screen_message.display_win.class).to eq(String)
+  end
+
+  it "check if display_win is defined" do
+    expect(@screen_message.display_game_over.class).to eq(String)
   end
 end
 

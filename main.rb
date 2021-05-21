@@ -5,6 +5,9 @@
 # require_relative './player_option'
 # require_relative './score_comparison'
 
+# # Initialise GameState
+# game_state = GameState.new
+
 # # Create instance from ScreenMessage class
 # screen = ScreenMessage.new
 
@@ -44,7 +47,6 @@
 # # Loop game until WIN / GAME OVER
 # loop do
 #   # Display current money and reputation status
-#   game_state = GameState.new
 #   puts game_state.display_game_state
 
 #   screen.go_to_next
@@ -109,13 +111,17 @@
 
 #   # GAME OVER condition
 #   if GameState.current_reputation == 0
-#     puts "show game over screen"
+#     puts screen.display_game_over
+#     screen.go_to_next
+#     user_input = gets.strip
 #     break
 #   end
 
 #   # WIN condition
 #   if GameState.current_money >= GameState::TARGET_MONEY
-#     puts "show win screen"
+#     puts screen.display_win
+#     screen.go_to_next
+#     user_input = gets.strip
 #     break
 #   end
 # end
