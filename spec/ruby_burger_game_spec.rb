@@ -46,6 +46,7 @@ describe Recipe do
 end
 
 # Test case for Feature 3
+# and for Feature 6
 describe CustomerRequest do
   # This block runs before each test case defined in 'it' block
   before(:each) do
@@ -63,23 +64,6 @@ describe CustomerRequest do
 end
 
 # Test case for MAIN FEATURES: Feature 4
-# describe SelectedItem do
-#   # This block runs before each test case defined in 'it' block
-#   before(:each) do
-#     @item = "Tomato Sauce"
-#     @quantity = 2
-#     @selected_item = SelectedItem.new(@item, @quantity)
-#   end
-
-#   it "should return quantity of the selected item from options" do
-#     expect(@selected_item.quantity).to be(@quantity)
-#   end
-
-#   it "should return the item selected" do
-#     expect(@selected_item.item).to eq(@item)
-#   end
-# end
-
 describe PlayerOption do
   # This block runs before each test case defined in 'it' block
   before(:each) do
