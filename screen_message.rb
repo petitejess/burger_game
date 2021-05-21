@@ -1,6 +1,7 @@
 # Import Gems
 require 'tty-box'
 require 'tty-screen'
+require 'tty-prompt'
 
 class ScreenMessage
   # Constant variable for display formatting space
@@ -10,7 +11,10 @@ class ScreenMessage
   end
 
   def go_to_next
-    puts "\nPress ENTER to continue.\n"
+    # Create instance of TTY Prompt
+    prompt = TTY::Prompt.new
+
+    prompt.select("", %w(Next))
   end
 
   # Method for displaying message frame

@@ -5,12 +5,24 @@ require_relative './recipe'
 
 class PlayerOption
   def initialize
+    # Create instance of TTY Prompt
+    @prompt = TTY::Prompt.new
+  end
+
+  def get_start_game
+    player_response = @prompt.select("What would you like to do?") do |menu|
+      menu.choice "View 'How to Play'"
+      menu.choice "Start Game"
+    end
+
+    if player_response == "Start Game"
+      true
+    else
+      false
+    end
   end
 
   def get_options
-    # Create instance of TTY Prompt
-    prompt = TTY::Prompt.new
-
     # Variable to collect user input of item and quntity
     player_recipe = []
 
@@ -18,7 +30,7 @@ class PlayerOption
     loop do
       # Loop through ingredients for player to choose
       puts
-      item = prompt.select("What would you like to add? (stack from bottom up)") do |item|
+      item = @prompt.select("What would you like to add? (stack from bottom up)") do |item|
         Recipe::INGREDIENTS.each do |ingredient|
           item.choice ingredient
         end
