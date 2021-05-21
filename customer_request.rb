@@ -1,3 +1,6 @@
+# Import Gems
+require 'json'
+
 require_relative './recipe'
 require_relative './screen_message'
 
@@ -87,20 +90,21 @@ class CustomerRequest
   end
 
   def display_response(customer_no, mood)
-    dialog_box = ScreenMessage.new
-    customer_request = CUSTOMER_REQUESTS[customer_no]
-    response = ""
+    # Read customer_response.JSON file, parse into array
+    file = File.read('./customer_response.json')
+    customers = JSON.parse(file)
 
-    response = case mood
-                when "happy"
-                  "Delicious! You're the best! Here take my money!"
-                when "neutral"
-                  "Hmm... The food here is not worth the price..."
-                else
-                  "GRRRRR!! What is THIS?! I don't even!! I hope you close down!!"
-                end
+    # Initialise frame for output formatting
+    dialog_box = ScreenMessage.new
+
+    # Get customer name and response
+    customer_name = CUSTOMER_REQUESTS[customer_no][0]
+    customer_response = ""
+    customers[customer_no].each do |name, responses|
+      responses.each { |type, text| customer_response += text if type == mood }
+    end
 
     # Format output using frame
-    dialog_box.msg_frame(customer_request[0], response)
+    dialog_box.msg_frame(customer_name, customer_response)
   end
 end
