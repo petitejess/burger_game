@@ -73,9 +73,9 @@ describe PlayerOption do
   it "should get start game options" do
     expect(@player_selections.get_start_game.class).to be(TrueClass) | be(FalseClass)
   end
-  # it "should get player's options" do
-  #   expect(@player_selections.get_options.class).to eq(Array)
-  # end
+  it "should get player's options" do
+    expect(@player_selections.get_options.class).to eq(Array)
+  end
 end
 
 # Test case for MAIN FEATURES: Feature 5
@@ -100,7 +100,7 @@ end
 describe GameState do
   # This block runs before each test case defined in 'it' block
   before(:each) do
-    player_recipe = [{ "Bun" => 1 }, { "Lettuce" => 2}, { "Grilled Chicken" => 2 }, { "Tomato Sauce" => 4 }, { "Cheese" => 3 }]
+    player_recipe = [{ "Bun" => 1 }, { "Lettuce" => 2 }, { "Grilled Chicken" => 2 }, { "Tomato Sauce" => 4 }, { "Cheese" => 3 }]
     customer_no = 1
     customer = CustomerRequest.new
     @compare = ScoreComparison.new(player_recipe, customer.get_request(customer_no))
@@ -108,7 +108,9 @@ describe GameState do
   end
 
   it "should get current money level" do
-    expect(@compare.calculate_state(@compare.get_mood(@compare.get_score))[0]).to be(5)
+    score = @compare.get_score
+    mood = @compare.get_mood(score)
+    expect(@compare.calculate_state(mood)[0]).to be(5.0)
   end
 
   it "should get current reputation level" do
