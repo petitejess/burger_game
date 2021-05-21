@@ -82,4 +82,42 @@ class ScreenMessage
     # Format output using frame
     msg_frame(title, msg, height)
   end
+
+  def display_win
+    title = "   YOU WIN   "
+    msg = "Ruby Burger has reached its goal!\n\nAll thanks to you and your brilliant burger stacking skill.\nNow is time to celebrate and give yourself a reward..." + "\n\n"
+    msg += "A burger... and chips!" + "\n\n"
+
+    msg += "                            |\\ /| /|_/|" + "\n"
+    msg += "                          |\\||-|\\||-/|/|" + "\n"
+    msg += "                           \\\\|\\|//||///" + "\n"
+    msg += "          _..----.._       |\\/\\||//||||" + "\n"
+    msg += "        .'     o    '.     |||\\\\|/\\\\ ||" + "\n"
+    msg += "       /   o       o  \\    | './\\_/.' |" + "\n"
+    msg += "      |o        o     o|   |          |" + "\n"
+    msg += "      /'-.._o     __.-'\\   |          |" + "\n"
+    msg += "      \\      `````     /   |          |" + "\n"
+    msg += "     |``--........--'`|    '.______.'" + "\n"
+    msg += "\\              /          " + "\n"
+    msg += "jgs  `'----------'`              " + "\n\n"
+
+    msg += "-- all ASCII artwork copyrighted ©1996-01 -- Joan G. Stark -- All Rights Reserved --" + "\n\n"
+    msg += "\n\n\n~ END ~"
+
+    height = 35
+
+    # Format output using frame
+    msg_frame(title, msg, height)
+  end
+
+  def display_game_over
+    title = "   GAME OVER   "
+    msg = "Oh no! Everyone is leaving because you didn't stack the right burgers!\n\nOwning a burger shop, especially a Ruby one, is tough.\nYou need to practice hard (or just use the handicap ARGV in command line, read the instruction in the installation guide in README.md).\n\nDon't give up! You can always try again next time!" + "\n\n"
+    msg += "You are lucky this is just a game..."
+    msg += "\n\n\n~ END ~"
+    height = 20
+
+    # Format output using frame
+    msg_frame(title, msg, height)
+  end
 end
