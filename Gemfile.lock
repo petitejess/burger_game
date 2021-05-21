@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     colorize (0.8.1)
+    json (2.5.1)
     pastel (0.8.0)
       tty-color (~> 0.5)
     strings (0.2.1)
@@ -32,6 +33,7 @@ PLATFORMS
 
 DEPENDENCIES
   colorize (~> 0.8.1)
+  json (~> 2.5)
   tty-box (~> 0.7.0)
   tty-prompt (~> 0.23.1)
   tty-screen (~> 0.8.1)
