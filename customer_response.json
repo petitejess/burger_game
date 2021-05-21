@@ -1,0 +1,62 @@
+{
+  "A Customer":
+  {
+    "happy": "Oh what a lovely burger you gave me!\nThank you!",
+    "neutral": "You sure you don't miss a thing or two in this burger...?",
+    "angry": "Hey, I don't think I ordered this...\n*The customer pushes the burger back to you*"
+  },
+  "Captain Australia":
+  {
+    "happy": "WOW! That's one bloody awesome burger!\nBetter than Maccas for sure! Ta!",
+    "neutral": "Hey mate, you sure this burger is mine..?\n*Captain thinks you are being dodgy...*",
+    "angry": "...\nAre you sure YOU want ME to PAY for THIS..?\n*Captain is flexing his muscle while looking directly into your soul...*"
+  },
+  "John Citizen":
+  {
+    "happy": "Wonderful! Now, this is what you call a burger-to-die-for!",
+    "neutral": "Excuse me, this burger seems unsophisticated to me...",
+    "angry": "Are you sure this burger is legit? Do you even pay tax? *John seems angry*"
+  },
+  "Jane Citizen":
+  {
+    "happy": "Woo-hoo! This burger will give me strength to face John tomorrow!",
+    "neutral": "Ermm... This burger looks wrong..?\nBut I already gave half of it to John...",
+    "angry": "Noooo... Why are you being mean?\nYou are not John... *Jane covers her face and walks away*"
+  },
+  "Scott Morris":
+  {
+    "happy": "Oh wow, you made a delicously-hand-stacked burger!\nLet me shake your hands!",
+    "neutral": "I thought this burger was mine...\nBut, it looks like it belongs to someone else..?",
+    "angry": "Stop! Just! Stop!\nThis is ridiculous!\nThis is un-Australian!"
+  },
+  "The Mighty Princess":
+  {
+    "happy": "Aww.. You've done well, my dear law abiding citizen.\nHere, claim your reward!\n*The Mighty Princess throws you a gold bullion*",
+    "neutral": "Is this what they call a burger..?\nOr, is it just me being too entitled..?\n*The Mighty Princess looks confused*",
+    "angry": "YOU! *gestures angrily*\nI'm the Princess!\nYou do what I say!\n*The Mighty Princess starts climbing the counter top...*"
+  },
+  "Donald T.":
+  {
+    "happy": "You did it! You are now a member of my fans club!\nHere, take my money!",
+    "neutral": "Meh, I could build a better burger shop in this area.\n*Donald T. shrugs his shoulders*",
+    "angry": "WHAT IS THIS!\nI'm going to build a wall here.\nAnd, YOU are going to pay for it!"
+  },
+  "Mickey M.":
+  {
+    "happy": "Oh boy! This is nice!\nThank you, burger shop owner!\n*Mickey M. leaves a signature on the counter top*",
+    "neutral": "Hmm... I think this burger is not what I'm after...\n*Mickey M. shakes his head. He looks confused*",
+    "angry": "Hmph... I'm glad I didn't ask my wife to try this burger!\nAnd, no! I don't know Donald T.!\n*Mickey M. tries to look angry*"
+  },
+  "Unicorn":
+  {
+    "happy": "Yay! A burger for me! Thank you!\nI'm going to paint a rainbow for you!",
+    "neutral": "Eh? This doesn't look like my order..?\n*Unicorn's rainbow looks fading*",
+    "angry": "*Unicorn dashes out of the store crying out rainbow tears*"
+  },
+  "A Robot":
+  {
+    "happy": "Beep... Good... You restore my faith in humanity...\n*Robot pays in bitcoins*",
+    "neutral": "Oily.. Beep... No likey... Beep..",
+    "angry": "BEEE-EEP! BEEEEEEE-EEP! EEEEEEPPPP!\n*Robot malfunctions and grows into a giant robot*"
+  }
+}

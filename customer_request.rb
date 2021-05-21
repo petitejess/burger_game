@@ -15,7 +15,7 @@ class CustomerRequest
                     "   Donald T.   ",
                     "   Mickey M.   ",
                     "   Unicorn   ",
-                    "   A. Robot   "]
+                    "   A Robot   "]
 
   CUSTOMER_PREFERENCES = [{ "no cheese, thank you!" => [{ Recipe::INGREDIENTS[4] => 0 }]},
                           { "one extra patty please!" => [{ Recipe::INGREDIENTS[3] => 5 }]},
