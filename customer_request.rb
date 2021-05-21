@@ -45,7 +45,7 @@ class CustomerRequest
                       ]
 
   def get_request(customer_no)
-    all_recipes = Recipe::RECIPES # => array of all available recipes (hash of hashes)
+    all_recipes = Recipe::RECIPES.dup # => array of all available recipes (hash of hashes)
     requested_recipe_name = CUSTOMER_REQUESTS[customer_no][1] # => recipe name (string)
 
     # Get requested actual recipe (array of hashes)

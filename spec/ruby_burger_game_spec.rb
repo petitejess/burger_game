@@ -70,6 +70,9 @@ describe PlayerOption do
     @player_selections = PlayerOption.new
   end
 
+  it "should get start game options" do
+    expect(@player_selections.get_start_game.class).to be(TrueClass) | be(FalseClass)
+  end
   # it "should get player's options" do
   #   expect(@player_selections.get_options.class).to eq(Array)
   # end
