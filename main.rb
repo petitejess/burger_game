@@ -1,13 +1,13 @@
-require_relative './game_state'
-require_relative './screen_message'
-require_relative './recipe'
-require_relative './customer_request'
-require_relative './player_option'
-require_relative './score_comparison'
-
 # For command line argument
 require 'optparse'
 require 'ostruct'
+
+require_relative './lib/game_state'
+require_relative './lib/screen_message'
+require_relative './lib/recipe'
+require_relative './lib/customer_request'
+require_relative './lib/player_option'
+require_relative './lib/score_comparison'
 
 # Initialise
 game_state = GameState.new
@@ -36,11 +36,11 @@ end
 begin
   opt_parser.parse!
 rescue OptionParser::InvalidOption => e
-  puts "No option is found for that. Please check the available options in our Help menu '-h' or '--help'."
+  puts "You have entered an invalid option. Please check the available options in our Help menu '-h' or '--help'."
   puts e.message
   exit
 rescue OptionParser::MissingArgument => e
-  puts "You have not enter the argument for your option."
+  puts "You have not entered the argument for your option."
   puts e.message
   exit
 rescue OptionParser::ParseError => e

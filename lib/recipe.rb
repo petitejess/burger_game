@@ -8,14 +8,15 @@ class Recipe
   # ERROR HANDLING for reading files
   begin
     # Read recipe.JSON file
-    file = File.read('./recipe.json')
+    file = File.read('./lib/data/recipe.json')
   rescue Errno::ENOENT => e
-    puts "Could not find recipe.json file. Please put recipe.json in the same directory as recipe.rb."
+    puts "Could not find recipe.json file. Please put recipe.json in the 'data' directory."
     puts e.message
     exit
   rescue => e
     puts "Something went wrong."
     puts "Error message: " + e.message
+    exit
   end
   
   # Parse JSON file into array
