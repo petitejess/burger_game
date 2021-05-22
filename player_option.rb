@@ -9,6 +9,19 @@ class PlayerOption
     @prompt = TTY::Prompt.new
   end
 
+  def get_launch_game
+    player_response = @prompt.select("Do you want to launch the game?") do |menu|
+      menu.choice "Launch Game"
+      menu.choice "Exit"
+    end
+
+    if player_response == "Launch Game"
+      true
+    else
+      false
+    end
+  end
+
   def get_start_game
     player_response = @prompt.select("What would you like to do?") do |menu|
       menu.choice "View 'How to Play'"

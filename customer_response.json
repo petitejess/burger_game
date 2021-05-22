@@ -20,7 +20,7 @@
     {
       "happy": "Wonderful! Now, this is what you call a burger-to-die-for!",
       "neutral": "Excuse me, this burger seems unsophisticated to me...",
-      "angry": "Are you sure this burger is legit? Do you even pay tax? *John seems angry*"
+      "angry": "Horrible!! I hope you close down! *John seems angry*"
     }
   },
   {
@@ -36,7 +36,7 @@
     {
       "happy": "Oh wow, you made a delicously-hand-stacked burger!\nLet me shake your hands!",
       "neutral": "I thought this burger was mine...\nBut, it looks like it belongs to someone else..?",
-      "angry": "Stop! Just! Stop!\nThis is ridiculous!\nThis is un-Australian!"
+      "angry": "Stop it! Just! Stop! It!\nThis is ridiculous!\nThis is un-Australian!"
     }
   },
   {
