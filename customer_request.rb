@@ -1,75 +1,61 @@
-# Import Gems
-require 'json'
-
 require_relative './recipe'
 require_relative './screen_message'
 
 class CustomerRequest
+  # Read customer_request.JSON file, parse into array
+  customer_file = File.read('./customer_request.json')
+  @@all_customers = JSON.parse(customer_file)
+
+  # Read customer_response.JSON file, parse into array
+  response_file = File.read('./customer_response.json')
+  @@customer_responses = JSON.parse(response_file)
+
+  # Collect customer names (array of strings)
+  # and customer recipe names request (array of strings)
+  # and customer ingredient changes (array of hashes)
+  # and customer requests text (array of strings)
+  # and customer preferences text (array of strings)
+  @@customer_names = []
+  @@customer_recipe_names = []
+  @@customer_ingredient_changes = []
+  @@customer_requests_text = []
+  @@customer_preferences_text = []
+  @@all_customers.each do |customer|
+    customer.each do |name, request|
+      @@customer_names << name
+      @@customer_recipe_names << request[0].keys[0]
+      @@customer_ingredient_changes << request[0].values[0][0]
+      @@customer_requests_text << request[1].values.join
+      @@customer_preferences_text << request[2].values.join
+    end
+  end
+
+  # Collect customer responses (array of arrays of hashes)
+  @@responses = []
+  @@customer_responses.each do |responses|
+    @@responses << responses.values
+  end
+
   def initialize
   end
-  
-  # Constant variables for customer details
-  CUSTOMER_NAMES = ["   A Customer   ",
-                    "   Captain Australia   ",
-                    "   John Citizen   ",
-                    "   Jane Citizen   ",
-                    "   Scott Morris   ",
-                    "   The Mighty Princess   ",
-                    "   Donald T.   ",
-                    "   Mickey M.   ",
-                    "   Unicorn   ",
-                    "   A Robot   "]
-
-  CUSTOMER_PREFERENCES = [{ "no cheese, thank you!" => [{ Recipe::INGREDIENTS[4] => 0 }]},
-                          { "one extra patty please!" => [{ Recipe::INGREDIENTS[3] => 5 }]},
-                          { "no veggie please!" => [{ Recipe::INGREDIENTS[2] => 0 }]},
-                          { "no chicken please!" => [{ Recipe::INGREDIENTS[3] => 0 }]},
-                          { "extra two slices of cheese please!" => [{ Recipe::INGREDIENTS[4] => 5 }]},
-                          { "extra one lettuce please!" => [{ Recipe::INGREDIENTS[2] => 4 }]},
-                          { "no lettuce!! Please!!" => [{ Recipe::INGREDIENTS[2] => 0 }]},
-                          { "double tomato sauce please!" => [{ Recipe::INGREDIENTS[1] => 2 }]},
-                          { "no tomato sauce..." => [{ Recipe::INGREDIENTS[1] => 0 }]},
-                          { "triple patty please!" => [{ Recipe::INGREDIENTS[3] => 3 }]}
-                        ]
-
-  CUSTOMER_REQUESTS = [[CUSTOMER_NAMES[0], Recipe::RECIPE_NAMES[0], CUSTOMER_PREFERENCES[0]],
-                       [CUSTOMER_NAMES[1], Recipe::RECIPE_NAMES[2], CUSTOMER_PREFERENCES[1]],
-                       [CUSTOMER_NAMES[2], Recipe::RECIPE_NAMES[1], CUSTOMER_PREFERENCES[2]],
-                       [CUSTOMER_NAMES[3], Recipe::RECIPE_NAMES[1], CUSTOMER_PREFERENCES[3]],
-                       [CUSTOMER_NAMES[4], Recipe::RECIPE_NAMES[2], CUSTOMER_PREFERENCES[4]],
-                       [CUSTOMER_NAMES[5], Recipe::RECIPE_NAMES[1], CUSTOMER_PREFERENCES[5]],
-                       [CUSTOMER_NAMES[6], Recipe::RECIPE_NAMES[2], CUSTOMER_PREFERENCES[6]],
-                       [CUSTOMER_NAMES[7], Recipe::RECIPE_NAMES[1], CUSTOMER_PREFERENCES[7]],
-                       [CUSTOMER_NAMES[8], Recipe::RECIPE_NAMES[2], CUSTOMER_PREFERENCES[8]],
-                       [CUSTOMER_NAMES[9], Recipe::RECIPE_NAMES[0], CUSTOMER_PREFERENCES[9]]
-                      ]
 
   def get_request(customer_no)
-    all_recipes = Recipe::RECIPES.dup # => array of all available recipes (hash of hashes)
-    requested_recipe_name = CUSTOMER_REQUESTS[customer_no][1] # => recipe name (string)
+    # Get all original recipes for base recipes (array of hashes)
+    base_recipes = Recipe.all_recipes
 
-    # Get requested actual recipe (array of hashes)
-    actual_recipe = []
-    all_recipes.each do |recipe|
-      if recipe.keys.join == requested_recipe_name
-        actual_recipe = recipe[requested_recipe_name]
-      end
-    end
-
-    # Variable to hold hash of customer preference (array with single hash)
-    requested_preference = []
-    CUSTOMER_PREFERENCES[customer_no].each { |text, preference| requested_preference = preference }
-    
-    # Replace actual recipe with customer preference:
-    # 1. Get preference ingredient name (string)
-    ingredient = requested_preference[0].keys.join
-
-    # 2. Replace quantity value of the line in actual recipe which key matches preference ingredient name
-    customer_recipe = actual_recipe.dup
-
-    customer_recipe.each do |line|
-      if line.keys == requested_preference[0].keys
-        line[ingredient] = requested_preference[0][ingredient]
+    # Create customer recipe based on preference (array of hashes)
+    customer_recipe = []
+    requested_recipe_name = @@customer_recipe_names[customer_no]
+    requested_ingredient = @@customer_ingredient_changes[customer_no]
+    base_recipes.each do |recipe|
+      if recipe.key?(requested_recipe_name)
+        customer_recipe = recipe[requested_recipe_name].dup # => Not yet changed
+        # Change here
+        customer_recipe.each_with_index do |list, i|
+          if list.keys === requested_ingredient.keys
+            customer_recipe[i] = requested_ingredient
+          end
+        end
       end
     end
     
@@ -78,33 +64,37 @@ class CustomerRequest
   end
 
   def display_request(customer_no)
+    # Initialise frame for output formatting
     dialog_box = ScreenMessage.new
-    customer_request = CUSTOMER_REQUESTS[customer_no]
+    customer_name = @@customer_names[customer_no]
+    customer_request_text = @@customer_requests_text[customer_no]
+    customer_preference_text = @@customer_preferences_text[customer_no]
 
     # Put all string output lines in a variable
-    request_text = "Can I have \"" + customer_request[1] + "\" today?\n"
-    request_text += "With " + customer_request[2].keys[0]
+    msg = ""
+    msg += customer_request_text
+    msg += "\n"
+    msg += customer_preference_text
 
     # Format output using frame
-    dialog_box.msg_frame(customer_request[0], request_text)
+    dialog_box.msg_frame(customer_name, msg)
   end
 
   def display_response(customer_no, mood)
-    # Read customer_response.JSON file, parse into array
-    file = File.read('./customer_response.json')
-    customers = JSON.parse(file)
-
     # Initialise frame for output formatting
     dialog_box = ScreenMessage.new
+    customer_name = @@customer_names[customer_no]
+    customer_response = @@responses[customer_no]
 
-    # Get customer name and response
-    customer_name = CUSTOMER_REQUESTS[customer_no][0]
-    customer_response = ""
-    customers[customer_no].each do |name, responses|
-      responses.each { |type, text| customer_response += text if type == mood }
+    # Put all string output lines in a variable
+    msg = ""
+    customer_response.each do |response|
+      response.each do |type, text|
+        msg += text if mood === type
+      end
     end
-
+    
     # Format output using frame
-    dialog_box.msg_frame(customer_name, customer_response)
+    dialog_box.msg_frame(customer_name, msg)
   end
 end

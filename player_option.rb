@@ -36,6 +36,15 @@ class PlayerOption
   end
 
   def get_options
+    # Get ingredient names (array of strings)
+    ingredient_names = []
+    Recipe.ingredient_lists[0].each do |list|
+      ingredient_names << list.keys.join
+    end
+
+    # Remove duplicate last value
+    ingredient_names.pop
+
     # Variable to collect user input of item and quntity
     player_recipe = []
 
@@ -44,7 +53,7 @@ class PlayerOption
       # Loop through ingredients for player to choose
       puts
       item = @prompt.select("What would you like to add? (stack from bottom up)") do |item|
-        Recipe::INGREDIENTS.each do |ingredient|
+        ingredient_names.each do |ingredient|
           item.choice ingredient
         end
 
@@ -71,6 +80,7 @@ class PlayerOption
       player_recipe << { item => quantity.to_i }
     end
 
+    # Array of ingredient-quantity hashes
     player_recipe
   end
 end

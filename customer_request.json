@@ -1,0 +1,172 @@
+[
+  {
+    "A Customer":
+    [
+      {
+        "Normal Burger":
+        [
+          {"Cheese": 0}
+        ]
+      },
+      {
+        "Request": "Hello! Can I please have a \"Normal Burger\" today?"
+      },
+      {
+        "Preference": "I don't like cheese, so, with no cheese please!"
+      }
+    ]
+  },
+  {
+    "Captain Australia":
+    [
+      {
+        "Questionable Burger":
+        [
+          {"Grilled Chicken": 5}
+        ]
+      },
+      {
+        "Request": "G'day mate! Can I get \"Questionable Burger\" please?"
+      },
+      {
+        "Preference": "I'm so hungry, please put an extra patty in my burger! Ta!"
+      }
+    ]
+  },
+  {
+    "John Citizen":
+    [
+      {
+        "Healthy Burger":
+        [
+          {"Lettuce": 0}
+        ]
+      },
+      {
+        "Request": "Hi there. I'm a healthy person you know. So, can I have \"Healthy Burger\" please?"
+      },
+      {
+        "Preference": "And, with no veggies please. Yes, you hear me right, no veggies!"
+      }
+    ]
+  },
+  {
+    "Jane Citizen":
+    [
+      {
+        "Healthy Burger":
+        [
+          {"Grilled Chicken": 0}
+        ]
+      },
+      {
+        "Request": "Hi... I'd like to have the \"Healthy Burger\" please."
+      },
+      {
+        "Preference": "I don't want the chicken.\nIt reminds me of John..."
+      }
+    ]
+  },
+  {
+    "Scott Morris":
+    [
+      {
+        "Questionable Burger":
+        [
+          {"Cheese": 5}
+        ]
+      },
+      {
+        "Request": "Good day! A quick question, can I have the \"Questionable Burger\" please?"
+      },
+      {
+        "Preference": "With extra two slices of cheese please.\nI hope it is not cheesy. Hahaha!\n*laughs at own attempt to be funny*"
+      }
+    ]
+  },
+  {
+    "The Mighty Princess":
+    [
+      {
+        "Healthy Burger":
+        [
+          {"Lettuce": 4}
+        ]
+      },
+      {
+        "Request": "Oh, tell me dear citizen, can this Princess have the \"Healthy Burger\" please?"
+      },
+      {
+        "Preference": "Make it with extra one lettuce! I will reward you handsomely..."
+      }
+    ]
+  },
+  {
+    "Donald T.":
+    [
+      {
+        "Questionable Burger":
+        [
+          {"Lettuce": 0}
+        ]
+      },
+      {
+        "Request": "I'm a busy man. Give the \"Questionable Burger\". Thanks."
+      },
+      {
+        "Preference": "Oh, and I'll have it without lettuce!\nNo lettuce!!\n*throws fist in the air*"
+      }
+    ]
+  },
+  {
+    "Mickey M.":
+    [
+      {
+        "Healthy Burger":
+        [
+          {"Tomato Sauce": 2}
+        ]
+      },
+      {
+        "Request": "Hello... Hmm... I'm interested in trying the \"Healthy Burger\" please..."
+      },
+      {
+        "Preference": "I love tomato, so can I have double the sauce please?"
+      }
+    ]
+  },
+  {
+    "Unicorn":
+    [
+      {
+        "Questionable Burger":
+        [
+          {"Tomato Sauce": 0}
+        ]
+      },
+      {
+        "Request": "Hiya! Can I have \"Questionable Burger\" please?"
+      },
+      {
+        "Preference": "Leave the tomato sauce out please.\nIt will ruin the colour balance of my rainbow."
+      }
+    ]
+  },
+  {
+    "A Robot":
+    [
+      {
+        "Normal Burger":
+        [
+          {"Grilled Chicken": 3}
+        ]
+      },
+      {
+        "Request": "Beep... Can I have the.. Beep... \"Normal Burger\" please?"
+      },
+      {
+        "Preference": "Beep... With triple... Beep... Patty please..."
+      }
+    ]
+  }
+]

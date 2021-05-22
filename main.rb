@@ -12,7 +12,7 @@ require 'ostruct'
 # Initialise
 game_state = GameState.new
 show_menu = Recipe.new
-no_of_recipe = Recipe::RECIPES.length
+no_of_recipe = Recipe.all_recipes.length
 screen = ScreenMessage.new
 player_options = PlayerOption.new
 options = OpenStruct.new
