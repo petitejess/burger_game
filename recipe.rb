@@ -5,8 +5,20 @@ require 'colorize'
 require_relative './screen_message'
 
 class Recipe
-  # Read recipe.JSON file, parse into array
-  file = File.read('./recipe.json')
+  # ERROR HANDLING for reading files
+  begin
+    # Read recipe.JSON file
+    file = File.read('./recipe.json')
+  rescue Errno::ENOENT => e
+    puts "Could not find recipe.json file. Please put recipe.json in the same directory as recipe.rb."
+    puts e.message
+    exit
+  rescue => e
+    puts "Something went wrong."
+    puts "Error message: " + e.message
+  end
+  
+  # Parse JSON file into array
   @@all_recipes = JSON.parse(file)
 
   # Collect recipe names (array of strings)

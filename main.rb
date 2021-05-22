@@ -43,10 +43,12 @@ rescue OptionParser::MissingArgument => e
   puts e.message
   exit
 rescue OptionParser::ParseError => e
+  puts "Error when parsing argument."
   puts e.message
   exit
 rescue => e
-  puts e.message
+  puts "Something went wrong."
+  puts "Error message: " + e.message
   exit
 end
 
