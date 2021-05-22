@@ -1,39 +1,38 @@
 # Import Gems
+require 'json'
 require 'colorize'
 
 require_relative './screen_message'
 
 class Recipe
-  # Constant variables for available recipes for the menu
-  RECIPE_NAMES = ["Normal Burger", "Healthy Burger", "Questionable Burger"]
-  INGREDIENTS = ["Bun", "Tomato Sauce", "Lettuce", "Grilled Chicken", "Cheese"]
-  RECIPES = [{ RECIPE_NAMES[0] =>
-              [{ INGREDIENTS[0] => 1 },
-              { INGREDIENTS[1] => 1 },
-              { INGREDIENTS[2] => 1 },
-              { INGREDIENTS[3] => 1 },
-              { INGREDIENTS[4] => 1 },
-              { INGREDIENTS[0] => 1 }]
-            },
-            { RECIPE_NAMES[1] =>
-              [{ INGREDIENTS[0] => 1 },
-              { INGREDIENTS[4] => 1 },
-              { INGREDIENTS[1] => 1 },
-              { INGREDIENTS[3] => 2 },
-              { INGREDIENTS[2] => 3 },
-              { INGREDIENTS[0] => 1 }]
-            },
-            { RECIPE_NAMES[2] =>
-              [{ INGREDIENTS[0] => 1 },
-              { INGREDIENTS[4] => 3 },
-              { INGREDIENTS[1] => 4 },
-              { INGREDIENTS[3] => 4 },
-              { INGREDIENTS[2] => 2 },
-              { INGREDIENTS[0] => 1 }]
-            }
-          ]
+  # Read recipe.JSON file, parse into array
+  file = File.read('./recipe.json')
+  @@all_recipes = JSON.parse(file)
+
+  # Collect recipe names (array of strings)
+  # and ingredient lists (array of arrays of hashes)
+  @@recipe_names = []
+  @@ingredient_lists = []
+  @@all_recipes.each do |recipe|
+    @@recipe_names << recipe.keys[0]
+    recipe.each do |name, list|
+      @@ingredient_lists << list
+    end
+  end
 
   def initialize
+  end
+
+  def self.all_recipes
+    all_recipes_copy = @@all_recipes.dup
+  end
+
+  def self.recipe_names
+    @@recipe_names
+  end
+
+  def self.ingredient_lists
+    @@ingredient_lists
   end
 
   def display_recipe(recipe_index)
@@ -41,9 +40,9 @@ class Recipe
     spacing = ScreenMessage::SPACING
 
     # Put all string output lines in a variable
-    recipe = RECIPE_NAMES[recipe_index].center(spacing, " ").upcase + "\n\n" + "*".colorize(:blue) * spacing + "\n\n"
+    recipe = @@recipe_names[recipe_index].center(spacing, " ").upcase + "\n\n" + "*".colorize(:blue) * spacing + "\n\n"
 
-    RECIPES[recipe_index][RECIPE_NAMES[recipe_index]].each do |list|
+    @@ingredient_lists[recipe_index].each do |list|
       list.each do |item, quantity|
         recipe += "#{item}".rjust(spacing * 0.6) + " x #{quantity}".ljust(spacing * 0.4) + "\n"
       end

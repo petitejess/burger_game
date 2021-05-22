@@ -1,0 +1,35 @@
+[
+  {
+    "Normal Burger":
+    [
+      {"Bun": 1},
+      {"Tomato Sauce": 1},
+      {"Lettuce": 1},
+      {"Grilled Chicken": 1},
+      {"Cheese": 1},
+      {"Bun": 1}
+    ]
+  },
+  {
+    "Healthy Burger":
+    [
+      {"Bun": 1},
+      {"Cheese": 1},
+      {"Tomato Sauce": 1},
+      {"Grilled Chicken": 2},
+      {"Lettuce": 3},
+      {"Bun": 1}
+    ]
+  },
+  {
+    "Questionable Burger":
+    [
+      {"Bun": 1},
+      {"Cheese": 3},
+      {"Tomato Sauce": 4},
+      {"Grilled Chicken": 4},
+      {"Lettuce": 2},
+      {"Bun": 1}
+    ]
+  }
+]

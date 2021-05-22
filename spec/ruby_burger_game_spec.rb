@@ -1,7 +1,6 @@
 require_relative '../main'
 require_relative '../screen_message'
 require_relative '../recipe'
-require_relative '../selected_item'
 require_relative '../player_option'
 require_relative '../customer_request'
 require_relative '../score_comparison'
