@@ -44,7 +44,7 @@ class ScoreComparison
   end
 
   def calculate_state(mood)
-    max_reputation = GameState::MAX_REPUTATION
+    max_reputation = GameState.max_reputation
     payment = GameState::PAYMENT
 
     if mood == "happy"

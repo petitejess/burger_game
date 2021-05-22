@@ -10,11 +10,23 @@ class ScreenMessage
   def initialize
   end
 
+  def display_h_money
+    msg = "Change TARGET_MONEY.\n\t\t\t\t\tThe lower the value, the easier to WIN.\n\t\t\t\t\tDefault is 50. Enter number 10 to 99.\n\t\t\t\t\tUsage example: -m 10"
+  end
+
+  def display_h_reputation
+    msg = "Change MAX_REPUTATION.\n\t\t\t\t\tThe lower the value, the easier to GAME OVER.\n\t\t\t\t\tDefault is 10. Enter number 1 to 10.\n\t\t\t\t\tUsage example: -r 2"
+  end
+
+  def display_invalid(input = "")
+    msg = "You have entered an invalid value #{input}\nPlease enter the value in a valid format. Use -h or --help to view Help menu.\n"
+  end
+
   def go_to_next
     # Create instance of TTY Prompt
     prompt = TTY::Prompt.new
 
-    prompt.select("", %w(Next))
+    prompt.select("Press enter to continue.", %w(Next))
   end
 
   # Method for displaying message frame
@@ -80,7 +92,7 @@ class ScreenMessage
   
   def display_prologue
     title = "   PROLOGUE   "
-    msg = "Ruby Burger is dedicated in fulfilling the ever growing customers' demand of customised and personalised burgers.\n\nOur job is to build a burger following our shop's Menu recipes, while adjusting into different customers' preferences.\n\n In the next scene, we will memorize our Menu and recipes.\n\nHint: Memorise burger names, ingredients and quantity needed, and ingredients stack order. Build burger from bottom up. Enter ingredients from the bottom of the stack to the top as seen in the recipes.\n\n\n~ END ~"
+    msg = "Ruby Burger is dedicated in fulfilling the ever growing customers' demand of customised and personalised burgers.\n\nOur job is to build a burger following our shop's Menu recipes, while adjusting into different customers' preferences.\n\n In the next scene, we will memorise our Menu and recipes.\n\nHint: Memorise burger names, ingredients and quantity needed, and ingredients stack order. Build burger from bottom up. Enter ingredients from the bottom of the stack to the top as seen in the recipes.\n\n\n~ END ~"
     height = 19
 
     # Format output using frame
