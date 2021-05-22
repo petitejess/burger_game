@@ -2,12 +2,33 @@ require_relative './recipe'
 require_relative './screen_message'
 
 class CustomerRequest
-  # Read customer_request.JSON file, parse into array
-  customer_file = File.read('./customer_request.json')
+  # ERROR HANDLING for reading files
+  begin
+    # Read customer_request.JSON file
+    customer_file = File.read('./customer_request.json')
+  rescue Errno::ENOENT => e
+    puts "Could not find customer_request.json file. Please put customer_request.json in the same directory as customer_request.rb."
+    puts e.message
+    exit
+  rescue => e
+    puts "Something went wrong."
+    puts "Error message: " + e.message
+  end
+  
+  begin
+    # Read customer_response.JSON file
+    response_file = File.read('./customer_response.json')
+  rescue Errno::ENOENT => e
+    puts "Could not find customer_response.json file. Please put customer_response.json in the same directory as customer_request.rb."
+    puts e.message
+    exit
+  rescue => e
+    puts "Something went wrong."
+    puts "Error message: " + e.message
+  end
+  
+  # Parse JSON file into array
   @@all_customers = JSON.parse(customer_file)
-
-  # Read customer_response.JSON file, parse into array
-  response_file = File.read('./customer_response.json')
   @@customer_responses = JSON.parse(response_file)
 
   # Collect customer names (array of strings)

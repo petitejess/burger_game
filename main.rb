@@ -15,6 +15,7 @@ show_menu = Recipe.new
 no_of_recipe = Recipe.all_recipes.length
 screen = ScreenMessage.new
 player_options = PlayerOption.new
+customer = CustomerRequest.new
 options = OpenStruct.new
 
 # Handle command line argument
@@ -144,7 +145,6 @@ loop do
   puts
   # Randomise customer
   customer_no = rand(0..9)
-  customer = CustomerRequest.new
   puts customer.display_request(customer_no)
   puts
 
