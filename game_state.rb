@@ -13,12 +13,13 @@ class GameState
     @@max_reputation = MAX_REPUTATION
   end
 
-  def set_target_money(cl_valid_money)
-    @@target_money = cl_valid_money
+  def set_target_money(cl_target_money)
+    @@target_money = cl_target_money
   end
 
-  def set_max_reputation(cl_valid_reputation)
-    @@max_reputation = cl_valid_reputation
+  def set_max_reputation(cl_max_reputation)
+    @@max_reputation = cl_max_reputation
+    @@current_reputation = @@max_reputation
   end
 
   def self.target_money

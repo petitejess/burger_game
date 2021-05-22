@@ -53,22 +53,23 @@ end
 if (options.target_money)
   if ((options.target_money.to_i >= 10 ) && (options.target_money.to_i <= 99 ))
     puts "Change TARGET_MONEY to: $#{options.target_money}.00."
+    # Set target money in GameState
+    game_state.set_target_money(options.target_money.to_f)
   else
     puts screen.display_invalid("for TARGET_MONEY.")
     exit
   end
-  # # Set target money in GameState
-  # game_state.set_target_money(cl_valid_money)
+  
 end
 if (options.max_reputation)
   if ((options.max_reputation.to_i >= 1 ) && (options.max_reputation.to_i <= 10 ))
     puts "Change MAX_REPUTATION to: #{options.max_reputation}."
+    # Set max reputation in GameState
+    game_state.set_max_reputation(options.max_reputation.to_i)
   else
     puts screen.display_invalid("for MAX_REPUTATION.")
     exit
   end
-  # # Set max reputation in GameState
-  # game_state.set_max_reputation(cl_valid_reputation)
 end
 
 # Ask user if they want to launch the game or exit
@@ -169,6 +170,7 @@ loop do
 
   puts
   screen.go_to_next
+  puts
 
   # Update game state
   compare.calculate_state(mood)
@@ -178,7 +180,6 @@ loop do
   if GameState.current_reputation == 0
     puts screen.display_game_over
     puts
-    screen.go_to_next
     break
   end
 
@@ -186,7 +187,6 @@ loop do
   if GameState.current_money >= GameState.target_money
     puts screen.display_win
     puts
-    screen.go_to_next
     break
   end
 end
