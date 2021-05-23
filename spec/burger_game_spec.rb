@@ -1,4 +1,4 @@
-require_relative '../main'
+require_relative '../lib/burger_game'
 require_relative '../lib/screen_message'
 require_relative '../lib/recipe'
 require_relative '../lib/player_option'
