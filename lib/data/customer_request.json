@@ -43,7 +43,7 @@
         ]
       },
       {
-        "Request": "Hi there. I'm a healthy person you know. So, can I have \"Healthy Burger\" please?"
+        "Request": "Hi there. I'm a healthy person you know.\nSo, can I have \"Healthy Burger\" please?"
       },
       {
         "Preference": "And, with no veggies please. Yes, you heard me right, no veggies!"
@@ -63,7 +63,7 @@
         "Request": "Hi... I'd like to have the \"Healthy Burger\" please."
       },
       {
-        "Preference": "I don't want the chicken.\nIt reminds me of John..."
+        "Preference": "I don't want the chicken. It reminds me of John..."
       }
     ]
   },
@@ -80,7 +80,7 @@
         "Request": "Good day! A quick question, can I have the \"Questionable Burger\" please?"
       },
       {
-        "Preference": "With extra two slices of cheese please.\nI hope it is not cheesy. Hahaha!\n*laughs at own attempt to be funny*"
+        "Preference": "With extra two slices of cheese please.\nI hope it is not cheesy. Hahaha! *laughs at own attempt to be funny*"
       }
     ]
   },
@@ -114,7 +114,7 @@
         "Request": "I'm a busy man. Give the \"Questionable Burger\". Thanks."
       },
       {
-        "Preference": "Oh, and I'll have it without lettuce!\nNo lettuce!!\n*throws fist in the air*"
+        "Preference": "Oh, and I'll have it without lettuce!\nNo lettuce!! *throws fist in the air*"
       }
     ]
   },
