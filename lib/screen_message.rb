@@ -22,13 +22,6 @@ class ScreenMessage
     msg = "You have entered an invalid value #{input}\nPlease enter the value in a valid format. Use -h or --help to view Help menu.\n"
   end
 
-  def go_to_next
-    # Create instance of TTY Prompt
-    prompt = TTY::Prompt.new
-
-    prompt.select("Press enter to continue.", %w(Next))
-  end
-
   # Method for displaying message frame
   def msg_frame(title, msg, height = 10)
     msg_box = TTY::Box.frame({
@@ -154,5 +147,21 @@ class ScreenMessage
 
     # Format output using frame
     msg_frame(title, msg, height)
+  end
+
+  def go_to_next
+    # Create instance of TTY Prompt
+    prompt = TTY::Prompt.new
+
+    input = prompt.select("Do you want to continue?") do |menu|
+      menu.choice "Next"
+      menu.choice "Exit"
+    end
+
+    if input == "Exit"
+      exit
+    else
+      input
+    end
   end
 end
