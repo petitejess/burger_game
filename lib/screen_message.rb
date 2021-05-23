@@ -33,7 +33,7 @@ class ScreenMessage
   def msg_frame(title, msg, height = 10)
     msg_box = TTY::Box.frame({
       enable_color: true, # force to always color output
-      width: 150,
+      width: 80,
       height: height,
       align: :center,
       padding: 3,
@@ -74,8 +74,12 @@ class ScreenMessage
   
   def display_welcome
     title = "   WELCOME   "
-    msg = "Hello there... Welcome to Ruby Burger!\n\n\n~ END ~"
-    height = 13
+    msg = "Hello there... Welcome to Ruby Burger!" + "\n\n"
+    msg += "We are going to build burgers for customers." + "\n"
+    msg += "Clear your mind, put on your best smile..." + "\n"
+    msg += "And... we're ready to stack 'em burgers!"
+    msg += "\n\n\n~ END ~"
+    height = 16
 
     # Format output using frame
     msg_frame(title, msg, height)
@@ -83,8 +87,12 @@ class ScreenMessage
 
   def display_instructions
     title = "   HOW TO PLAY   "
-    msg = "Instructions:\n\n1. When shop's Menu is displayed, memorise burger names, ingredients and quantity needed, and ingredients stack order.\n\n2. Customer's request will consists of the name of the burger, and custom preferences, such as 'no sauce' or 'extra 1 patty'.\n\n3. Enter ingredient and quantity needed in order, from bottom of the stack to the top.\n\n4. Keep customers happy and earn money to meet the target (You Win).\n\n5. Be careful not to make the customer angry and let your reputation get to 0 (Game Over).\n\n\n~ END ~"
-    height = 23
+    msg = "Instructions:\n\n1. When shop's Menu is displayed, memorise \"burger names\", \"ingredients\" and \"quantity\" needed, and ingredients \"stack order\"." + "\n\n"
+    msg += "2. Customer's request will consists of the \"name of the burger\", and custom \"preferences\", such as 'no sauce' or 'extra 1 patty'." + "\n\n"
+    msg += "3. Select ingredient and quantity needed in order, from \"bottom\" of the stack \"to the top\". Enter \"0\" for requests that ask to leave some ingredients out because we need to keep the correct order of the stack." + "\n\n"
+    msg += "4. When you build the burger perfectly as per customer request, the happy customer will increase your reputation by 1 point and pay $10 for the burger. Otherwise, if you miss a thing or two, but still acceptable, the pay would be halved but no reputation points given. If you fail to make a decent burger for the customer, the angry customer will not pay and they will take 1 point off your reputation." + "\n\n"
+    msg += "5. Keep enough customers happy and earn money to meet the target (You Win). Be careful not to make too many customers angry and let your reputation get to 0 (Game Over).\n\n\n~ END ~"
+    height = 34
 
     # Format output using frame
     msg_frame(title, msg, height)
@@ -92,8 +100,15 @@ class ScreenMessage
   
   def display_prologue
     title = "   PROLOGUE   "
-    msg = "Ruby Burger is dedicated in fulfilling the ever growing customers' demand of customised and personalised burgers.\n\nOur job is to build a burger following our shop's Menu recipes, while adjusting into different customers' preferences.\n\n In the next scene, we will memorise our Menu and recipes.\n\nHint: Memorise burger names, ingredients and quantity needed, and ingredients stack order. Build burger from bottom up. Enter ingredients from the bottom of the stack to the top as seen in the recipes.\n\n\n~ END ~"
-    height = 19
+    msg = "Ruby Burger is dedicated in fulfilling the ever growing customers' demand of customised and personalised burgers.\n"
+    msg += "Our job is to build a burger following our shop's Menu recipes, while adjusting into different customers' preferences.\n"
+    msg += "In the next scene, we will memorise our Menu and recipes." + "\n\n"
+    msg += "Hint:\n"
+    msg += "Memorise \"burger names\", \"ingredients\" and \"quantity\" needed, and ingredients \"stack order\".\n"
+    msg += "Build burger from \"bottom up\". Select ingredients from the bottom of the stack to the top as seen in the recipes.\n"
+    msg += "Enter \"0\" for requests that ask to leave some ingredients to keep the correct order of the stack."
+    msg += "\n\n\n~ END ~"
+    height = 24
 
     # Format output using frame
     msg_frame(title, msg, height)
@@ -115,10 +130,12 @@ class ScreenMessage
     msg += "      \\      `````     /   |          |" + "\n"
     msg += "     |``--........--'`|    '.______.'" + "\n"
     msg += "\\              /          " + "\n"
-    msg += "jgs  `'----------'`              " + "\n\n"
+    msg += "jgs  `'----------'`              " + "\n\n\n"
 
-    msg += "-- all ASCII artwork copyrighted ©1996-01 -- Joan G. Stark -- All Rights Reserved --" + "\n\n"
-    msg += "\n\n\n~ END ~"
+    msg += "-- all ASCII artwork copyrighted ©1996-01 --" + "\n"
+    msg += "Joan G. Stark" + "\n"
+    msg += "-- All Rights Reserved --" + "\n\n"
+    msg += "\n~ END ~"
 
     height = 35
 
@@ -128,7 +145,9 @@ class ScreenMessage
 
   def display_game_over
     title = "   GAME OVER   "
-    msg = "Oh no! Everyone is leaving because you didn't stack the right burgers!\n\nOwning a burger shop, especially a Ruby one, is tough.\nYou need to practice hard (or just use the handicap ARGV in command line, read the instruction in the installation guide in README.md).\n\nDon't give up! You can always try again next time!" + "\n\n"
+    msg = "Oh no! Everyone is leaving because you didn't stack the right burgers!" + "\n\n"
+    msg += "Owning a burger shop, especially a Ruby one, is tough.\n"
+    msg += "You need to practice hard (or just use the handicap ARGV in command line, read the instruction in the installation/usage guide in README.md).\n\nDon't give up! You can always try again next time!" + "\n\n"
     msg += "You are lucky this is just a game..."
     msg += "\n\n\n~ END ~"
     height = 20

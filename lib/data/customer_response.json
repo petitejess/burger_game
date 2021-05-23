@@ -1,6 +1,6 @@
 [
   {
-    "A Customer":
+    "   A Customer   ":
     {
       "happy": "Oh what a lovely burger you gave me!\nThank you!",
       "neutral": "You sure you don't miss a thing or two in this burger...?",
@@ -8,7 +8,7 @@
     }
   },
   {
-    "Captain Australia":
+    "   Captain Australia   ":
     {
       "happy": "WOW! That's one bloody awesome burger!\nBetter than Maccas for sure! Ta!",
       "neutral": "Hey mate, you sure this burger is mine..?\n*Captain thinks you are being dodgy...*",
@@ -16,7 +16,7 @@
     }
   },
   {
-    "John Citizen":
+    "   John Citizen   ":
     {
       "happy": "Wonderful! Now, this is what you call a burger-to-die-for!",
       "neutral": "Excuse me, this burger seems unsophisticated to me...",
@@ -24,7 +24,7 @@
     }
   },
   {
-    "Jane Citizen":
+    "   Jane Citizen   ":
     {
       "happy": "Woo-hoo! This burger will give me strength to face John tomorrow!",
       "neutral": "Ermm... This burger looks wrong..?\nBut I already gave half of it to John...",
@@ -32,7 +32,7 @@
     }
   },
   {
-    "Scott Morris":
+    "   Scott Morris   ":
     {
       "happy": "Oh wow, you made a delicously-hand-stacked burger!\nLet me shake your hands!",
       "neutral": "I thought this burger was mine...\nBut, it looks like it belongs to someone else..?",
@@ -40,7 +40,7 @@
     }
   },
   {
-    "The Mighty Princess":
+    "   The Mighty Princess   ":
     {
       "happy": "Aww.. You've done well, my dear law abiding citizen.\nHere, claim your reward!\n*The Mighty Princess throws you a gold bullion*",
       "neutral": "Is this what they call a burger..?\nOr, is it just me being too entitled..?\n*The Mighty Princess looks confused*",
@@ -48,7 +48,7 @@
     }
   },
   {
-    "Donald T.":
+    "   Donald T.   ":
     {
       "happy": "You did it! You are now a member of my fans club!\nHere, take my money!",
       "neutral": "Meh, I could build a better burger shop in this area.\n*Donald T. shrugs his shoulders*",
@@ -56,7 +56,7 @@
     }
   },
   {
-    "Mickey M.":
+    "   Mickey M.   ":
     {
       "happy": "Oh boy! This is nice!\nThank you, burger shop owner!\n*Mickey M. leaves a signature on the counter top*",
       "neutral": "Hmm... I think this burger is not what I'm after...\n*Mickey M. shakes his head. He looks confused*",
@@ -64,7 +64,7 @@
     }
   },
   {
-    "Unicorn":
+    "   Unicorn   ":
     {
       "happy": "Yay! A burger for me! Thank you!\nI'm going to paint a rainbow for you!",
       "neutral": "Eh? This doesn't look like my order..?\n*Unicorn's rainbow looks fading*",
@@ -72,7 +72,7 @@
     }
   },
   {
-    "A Robot":
+    "   A Robot   ":
     {
       "happy": "Beep... Good... You restore my faith in humanity...\n*Robot pays in bitcoins*",
       "neutral": "Oily.. Beep... No likey... Beep..",
