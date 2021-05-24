@@ -34,11 +34,13 @@ class CustomerRequest
   @@customer_responses = JSON.parse(response_file)
 
   # Collect customer names (array of strings)
+  # and number of customers
   # and customer recipe names request (array of strings)
   # and customer ingredient changes (array of hashes)
   # and customer requests text (array of strings)
   # and customer preferences text (array of strings)
   @@customer_names = []
+  @@no_of_customer = 0
   @@customer_recipe_names = []
   @@customer_ingredient_changes = []
   @@customer_requests_text = []
@@ -52,6 +54,7 @@ class CustomerRequest
       @@customer_preferences_text << request[2].values.join
     end
   end
+  @@no_of_customer = @@customer_names.length
 
   # Collect customer responses (array of arrays of hashes)
   @@responses = []
@@ -60,6 +63,10 @@ class CustomerRequest
   end
 
   def initialize
+  end
+
+  def self.no_of_customer
+    @@no_of_customer
   end
 
   def get_request(customer_no)
