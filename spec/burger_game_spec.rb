@@ -1,4 +1,4 @@
-require_relative '../lib/burger_game'
+require_relative '../burger_game'
 require_relative '../lib/screen_message'
 require_relative '../lib/recipe'
 require_relative '../lib/player_option'
@@ -52,6 +52,7 @@ describe CustomerRequest do
     @customer = CustomerRequest.new
     @customer_no = 1
   end
+
   it "should display customer request" do
     expect(@customer.display_request(@customer_no).class).to eq(String)
   end
@@ -69,11 +70,16 @@ describe PlayerOption do
     @player_selections = PlayerOption.new
   end
 
-  it "should get start game options" do
-    expect(@player_selections.get_start_game.class).to be(TrueClass) | be(FalseClass)
+  it "should launch the game" do
+    expect(@player_selections.launch_game.class).to be(TrueClass) | be(FalseClass)
   end
+
+  it "should start the game" do
+    expect(@player_selections.start_game.class).to be(TrueClass) | be(FalseClass)
+  end
+
   it "should get player's options" do
-    expect(@player_selections.get_options.class).to eq(Array)
+    expect(@player_selections.get_selection.class).to eq(Array)
   end
 end
 

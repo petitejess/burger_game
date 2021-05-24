@@ -9,7 +9,7 @@ class PlayerOption
     @prompt = TTY::Prompt.new
   end
 
-  def get_launch_game
+  def launch_game
     player_response = @prompt.select("Do you want to launch the game?") do |menu|
       menu.choice "Launch Game"
       menu.choice "Exit"
@@ -22,7 +22,7 @@ class PlayerOption
     end
   end
 
-  def get_start_game
+  def start_game
     player_response = @prompt.select("What would you like to do?") do |menu|
       menu.choice "View 'How to Play'"
       menu.choice "Start Game"
@@ -35,7 +35,7 @@ class PlayerOption
     end
   end
 
-  def get_options
+  def get_selection
     # Get ingredient names (array of strings)
     ingredient_names = []
     Recipe.ingredient_lists[0].each do |list|
