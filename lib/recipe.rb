@@ -25,6 +25,7 @@ class Recipe
   # Collect recipe names (array of strings)
   # and ingredient lists (array of arrays of hashes)
   @@recipe_names = []
+  @@no_of_recipe = 0
   @@ingredient_lists = []
   @@all_recipes.each do |recipe|
     @@recipe_names << recipe.keys[0]
@@ -32,6 +33,7 @@ class Recipe
       @@ingredient_lists << list
     end
   end
+  @@no_of_recipe = @@recipe_names.length
 
   def initialize
   end
@@ -42,6 +44,10 @@ class Recipe
 
   def self.recipe_names
     @@recipe_names
+  end
+
+  def self.no_of_recipe
+    @@no_of_recipe
   end
 
   def self.ingredient_lists

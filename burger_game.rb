@@ -13,10 +13,11 @@ class BurgerGame
   # Initialise
   game_state = GameState.new
   show_menu = Recipe.new
-  no_of_recipe = Recipe.all_recipes.length
+  no_of_recipe = Recipe.no_of_recipe
   screen = ScreenMessage.new
   player_options = PlayerOption.new
   customer = CustomerRequest.new
+  no_of_customer = CustomerRequest.no_of_customer
   options = OpenStruct.new
 
   # Handle command line argument
@@ -145,7 +146,7 @@ class BurgerGame
     puts "There is a customer in the queue..."
     puts
     # Randomise customer
-    customer_no = rand(0..9)
+    customer_no = rand(no_of_customer)
     puts customer.display_request(customer_no)
     puts
 
