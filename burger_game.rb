@@ -79,7 +79,7 @@ class BurgerGame
 
   # Ask user if they want to launch the game or exit
   puts
-  launch_game = player_options.get_launch_game
+  launch_game = player_options.launch_game
       
   # Exit command line if user select Exit
   exit if launch_game === false
@@ -93,7 +93,7 @@ class BurgerGame
   # Feature 1: Options to see instructions or to start the game
   loop do
     puts
-    start_game = player_options.get_start_game
+    start_game = player_options.start_game
 
     break if start_game === true
 
@@ -156,7 +156,7 @@ class BurgerGame
     # Feature 4: Selectable options for list of ingredients, so no manual entry (typing) is needed.
     # Quantity input as integer within a pre-set range.
     # Display player's options
-    player_recipe = player_options.get_options
+    player_recipe = player_options.get_selection
     customer_recipe = customer.get_request(customer_no)
 
     # Feature 5: Score calculation based on customer's request and preferences compared to player's input
