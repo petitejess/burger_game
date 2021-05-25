@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    artii (2.1.2)
     colorize (0.8.1)
     json (2.5.1)
     pastel (0.8.0)
@@ -34,6 +35,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  artii (~> 2.1)
   colorize (~> 0.8.1)
   json (~> 2.5)
   tty-box (~> 0.7.0)
