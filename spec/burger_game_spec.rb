@@ -112,13 +112,13 @@ describe GameState do
     @game_state = GameState.new
   end
 
-  it "should get current money level" do
+  it "should get correct current money amount" do
     score = @compare.get_score
     mood = @compare.get_mood(score)
     expect(@compare.calculate_state(mood)[0]).to be(5.0)
   end
 
-  it "should get current reputation level" do
+  it "should get correct current reputation points" do
     expect(@compare.calculate_state(@compare.get_mood(@compare.get_score))[1]).to be(10)
   end
 
