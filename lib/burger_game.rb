@@ -2,12 +2,12 @@
 require 'optparse'
 require 'ostruct'
 
-require_relative './lib/game_state'
-require_relative './lib/screen_message'
-require_relative './lib/recipe'
-require_relative './lib/customer_request'
-require_relative './lib/player_option'
-require_relative './lib/score_comparison'
+require_relative './game_state'
+require_relative './screen_message'
+require_relative './recipe'
+require_relative './customer_request'
+require_relative './player_option'
+require_relative './score_comparison'
 
 class BurgerGame
   # Initialise
