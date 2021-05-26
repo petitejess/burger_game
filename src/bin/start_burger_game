@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require 'burger_game'
+
+begin
+  BurgerGame.new *ARGV.dup
+rescue StandardError => e
+  puts "Something went wrong."
+  puts "Error message: " + e.message
+end
