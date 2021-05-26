@@ -1,9 +1,11 @@
 #!/bin/bash
-if ! gem list -i burger_game > /dev/null; then
-  gem install burger_game
-fi
-if ! gem list -i bundler > /dev/null; then
-  gem install bundler
-fi
-bundle install --quiet
+rm -rf ruby-burger-game-app
+git clone https://github.com/petitejess/ruby-burger-game-app.git
+gem install burger_game
+cd ruby-burger-game-app
+echo
+echo
+echo "Starting Burger Game..."
+echo
+echo
 ruby burger_game.rb "$@"
