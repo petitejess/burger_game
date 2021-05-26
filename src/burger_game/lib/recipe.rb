@@ -8,7 +8,7 @@ class Recipe
   # ERROR HANDLING for reading files
   begin
     # Read recipe.JSON file
-    file = File.read('./lib/data/recipe.json')
+    file = File.read('./data/recipe.json')
   rescue Errno::ENOENT => e
     puts "Could not find recipe.json file. Please put recipe.json in the 'data' directory."
     puts e.message
