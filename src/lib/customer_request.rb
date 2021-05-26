@@ -5,7 +5,8 @@ class CustomerRequest
   # ERROR HANDLING for reading files
   begin
     # Read customer_request.JSON file
-    customer_file = File.read('./data/customer_request.json')
+    customer_file = File.read(File.join(File.dirname(__FILE__), './customer_request.json'))
+    
   rescue Errno::ENOENT => e
     puts "Could not find customer_request.json file. Please put customer_request.json in the 'data' directory."
     puts e.message
@@ -18,7 +19,8 @@ class CustomerRequest
   
   begin
     # Read customer_response.JSON file
-    response_file = File.read('./data/customer_response.json')
+    response_file = File.read(File.join(File.dirname(__FILE__), './customer_response.json'))
+    
   rescue Errno::ENOENT => e
     puts "Could not find customer_response.json file. Please put customer_response.json in the 'data' directory."
     puts e.message

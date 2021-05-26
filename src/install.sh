@@ -1,7 +1,8 @@
 #!/bin/bash
 rm -rf burger_game
 git clone https://github.com/petitejess/burger_game.git
-gem install burger_game
+gem install bundler
+bundle install
 cd burger_game/src/lib/
 echo
 echo

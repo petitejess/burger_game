@@ -23,7 +23,7 @@ class BurgerGame
 
     # Handle command line argument
     opt_parser = OptionParser.new do |opt|
-      opt.banner = "Usage: main.rb [options]"
+      opt.banner = "Usage (Gem's executable): start_burger_game [options]\nOR\nUsage (bash script - install game): install.sh [options]\nUsage (bash script - run game): burger_game.sh [options]\n\n"
 
       opt.on("-h", "--help", "Print this Help menu for Ruby Burger Game.") do |arg|
         puts opt
