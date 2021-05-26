@@ -1,12 +1,7 @@
 #!/bin/bash
-rm -rf burger_game
-git clone https://github.com/petitejess/burger_game.git
+# Install Bundler Gem
 gem install bundler
+# Ask Bundler Gem to install all dependencies
 bundle install
-cd burger_game/src/lib/
-echo
-echo
-echo "Starting Burger Game..."
-echo
-echo
-ruby burger_game.rb "$@"
+# Call script to run the game
+./burger_game.sh
