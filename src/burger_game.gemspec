@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "burger_game"
-  s.version       = "1.0.2"
+  s.version       = "1.1.0"
   s.summary       = "A Ruby Burger Game"
   s.description   = "A simple text-based Ruby terminal game, that simulates a burger shop, where you need to build the meal for the customers with different requests and preferences."
   s.authors       = ["Jessica Gozali"]
@@ -20,9 +20,9 @@ Gem::Specification.new do |s|
                      "./lib/recipe.rb",
                      "./lib/score_comparison.rb",
                      "./lib/screen_message.rb",
-                     "./lib/data/customer_request.json",
-                     "./lib/data/customer_response.json",
-                     "./lib/data/recipe.json",
+                     "./lib/customer_request.json",
+                     "./lib/customer_response.json",
+                     "./lib/recipe.json",
                      "./spec/burger_game_spec.rb"]
   s.homepage      =  "https://rubygems.org/gems/burger_game"
   s.license       =  "GPL-3.0"
