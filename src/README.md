@@ -586,7 +586,7 @@ Another way to install this app is by using the bash script.
 3. Run script to install and run the app the first time:
 
     ```
-    ./install.sh [OPTION]
+    ./install.sh
     ```
     - The next time you want to only run the game (no need to install again), just run the script:
       ```
