@@ -94,6 +94,10 @@ For people who likes role-playing games, they may find it somewhat interesting. 
 
 &nbsp;
 
+---
+
+&nbsp;
+
 ## Features
 
 This app consists of a total of seven features that can be separated into two categories, Main Features and Supporting Features. Basically, the Main Features have the bare minimum things that make this app works and the Supporting Features adds functionalities to increase user experience.
@@ -172,6 +176,10 @@ Error handling is used to rescue error while reading the JSON file. The error is
 
 &nbsp;  
 
+---
+
+&nbsp;
+
 ## User Interface and User Experience
 
 This section will explain a narrative of how users will find out how to use each feature, use those features, and how errors are handled by the app and displayed to users.
@@ -239,9 +247,17 @@ Custom error messages are given, followed by the message from the instance of th
 
 &nbsp;  
 
+---
+
+&nbsp;
+
 ## Flowchart Diagram
 
 ![Burger Game Flowchart](./docs/burger_game_flowchart.jpg "Flowchart showing the logic flow of the app.")
+
+&nbsp;
+
+---
 
 &nbsp;
 
@@ -258,6 +274,8 @@ Trello project management tool was used to manage the app development.
 Initial plan showed that features were separated between three main features (in Main Features list) and four supporting features (in Backlog list). 
 
 ![List of Backlog and list of Main Features](./docs/images/trello-cropped-00.jpg "Initial plan on Trello board.")
+
+&nbsp;
 
 #### Feature 1: Options to see instructions or to start the game
 
@@ -284,6 +302,8 @@ Description: When players run the app, they will be greeted with a welcome messa
 - [x] Loop for user input
 - [x] Import Gem, utilise function(s)
 
+&nbsp;
+
 #### Feature 2: Formatted display for showing shop's menu
 
 *(Due Date: 19 May 2021 17:00)*
@@ -303,6 +323,8 @@ Description: Players will be shown the shop's menu in a format that helps them t
 - [x] Loop to display each menu item
 - [x] Import Gem, utilise function(s)
 
+&nbsp;
+
 #### Feature 3: Randomised customers with set of request (and associated preferences) and responses
 
 *(Due Date: 20 May 2021 17:00)*
@@ -321,6 +343,8 @@ Description: Players will get requests from various randomised customers with th
 
 - [x] Loop through data structure
 - [x] Use rand() for random customer implementation
+
+&nbsp;
 
 #### MAIN Feature 4: Selectable options for list of ingredients, so no manual entry (typing) is needed, and quantity input as integer within a pre-set range
 
@@ -342,6 +366,8 @@ Description: Players will be given selectable options for list of ingredients to
 - [x] Loop for user input
 - [x] Import Gem, utilise function(s)
 
+&nbsp;
+
 #### MAIN Feature 5: Score calculation based on customer's request and preferences compared to player's input
 
 *(Due Date: 21 May 2021 17:00)*
@@ -362,6 +388,8 @@ Description: Score will be calculated based on comparison between customer's req
 - [x] Switch case statement for different types of customer responses
 - [x] If-elsif-else statement for giving value to add money or reduce reputation
 
+&nbsp;
+
 #### Feature 6: Get customers' responses from a JSON file
 
 *(Due Date: 21 May 2021 17:00)*
@@ -378,6 +406,8 @@ Description: Various customers' happy, neutral, angry responses are stored in a 
 **Code Implementation:**
 
 - [x] Import Gem, utilise function(s)
+
+&nbsp;
 
 #### MAIN Feature 7: Lose/win criteria based on reputation and money
 
@@ -396,6 +426,8 @@ Description: Players will lose the game once their reputation value hits zero (0
 **Code Implementation:**
 
 - [x] If-else statement for win/lose
+
+&nbsp;
 
 ### Trello Screenshots
 
@@ -446,9 +478,13 @@ Last stage:
 
 &nbsp;
 
+---
+
+&nbsp;
+
 ## Installation and Usage
 
-There are two options available to install Burger Game app. This is assuming the prerequisites are met prior installation attempt.
+There are two options available to install Burger Game app: **Ruby Gem** or **Bash Script**. This is assuming the prerequisites are met prior to installation attempt.
 
 Please see below guidelines and instructions for installation options and usage.
 
@@ -474,6 +510,9 @@ ruby -v
 
 For Ruby update/installation guide, please refer to the official Ruby documentation: [https://www.ruby-lang.org/en/documentation/installation/](https://www.ruby-lang.org/en/documentation/installation/).
 
+&nbsp;  
+&nbsp;  
+
 ### Ruby Gem (Installation and Usage)
 
 The most convenient way to install this app is by installing this app as a Gem. Executable file is also available.
@@ -490,12 +529,11 @@ Please see below instructions for installation of Burger Game gem.
     ```
     start_burger_game
     ```
-OR
-2. To start the game with **options** (command line arguments):
+    OR To start the game with **options** (command line arguments):
 
-  ```
-  start_burger_game [OPTION]
-  ```
+    ```
+    start_burger_game [OPTION]
+    ```
 
 **Options** available:
 
@@ -528,7 +566,8 @@ Examples:
   start_burger_game -m 30 -r 5
   ```
 
-&nbsp;
+&nbsp;  
+&nbsp;  
 
 ### Bash Script (Installation and Usage)
 
@@ -554,11 +593,12 @@ Another way to install this app is by using the bash script.
       ./burger_game.sh
       ```
 
-&nbsp;
+&nbsp;  
+&nbsp;  
 
 ### Dependencies
 
-All gem dependencies are handled by Bundler during installation. The information below is only for reference.
+Gem dependencies are handled by *add_runtime_dependency* when installing with Ruby Gem installation option, and by *Bundler* gem when installing with Bash Script installation option. The information below is only for reference.
 
 List of Gems used in building the app:
 
@@ -567,9 +607,14 @@ List of Gems used in building the app:
 | artii | v.2.1 | Used for text formatting |
 | colorize | v.0.8.1 | Used for text formatting |
 | json | v.2.5 | Used to parse JSON file |
-| rspec | v.3.10 | Used for code testing |
 | tty-box | v.0.7.0 | Used for border/table formatting |
 | tty-prompt | v.0.23.1 | Used for user input with selectable options|
+| rspec | v.3.10 | Used for code testing |
+| bundler | v.2.2 | Used for gem dependencies |
+
+&nbsp;
+
+---
 
 &nbsp;
 
