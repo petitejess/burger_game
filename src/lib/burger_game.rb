@@ -23,16 +23,16 @@ class BurgerGame
 
     # Handle command line argument
     opt_parser = OptionParser.new do |opt|
-      opt.banner = "Usage (Gem's executable): start_burger_game [options]\nOR\nUsage (bash script - install game): install.sh [options]\nUsage (bash script - run game): burger_game.sh [options]\n\n"
+      opt.banner = "Usage (Gem's executable): start_burger_game [OPTION]\nOR\nUsage (bash script - install game): install.sh [OPTION]\nUsage (bash script - run game): burger_game.sh [OPTION]\n\n"
 
-      opt.on("-h", "--help", "Print this Help menu for Ruby Burger Game.") do |arg|
+      opt.on("-h", "--help", "Print this Help menu for Burger Game.") do |arg|
         puts opt
         exit
       end
 
-      opt.on("-m", "--money TARGET_MONEY", screen.display_h_money) { |arg| options.target_money = arg }
+      opt.on("-m", "--money [TARGET_MONEY]", screen.display_h_money) { |arg| options.target_money = arg }
 
-      opt.on("-r", "--reputation MAX_REPUTATION", screen.display_h_reputation) { |arg| options.max_reputation = arg }
+      opt.on("-r", "--reputation [MAX_REPUTATION]", screen.display_h_reputation) { |arg| options.max_reputation = arg }
     end
 
     # ERROR HANDLING for command line argument
