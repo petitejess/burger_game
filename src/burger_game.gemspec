@@ -12,6 +12,7 @@ Gem::Specification.new do |s|
                      "./Gemfile",
                      "./Gemfile.lock",
                      "./LICENSE",
+                     "./README.md",
                      "./bin/start_burger_game",
                      "./lib/burger_game.rb",
                      "./lib/customer_request.rb",
