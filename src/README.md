@@ -595,7 +595,7 @@ Another way to install this app is by using the bash script.
 
 **Options** available:
 
-Usage (bash script - install game): ./install.sh [*OPTION*]
+Usage (bash script - install game): ./install.sh
 
 Usage (bash script - run game): ./burger_game.sh [*OPTION*]
 
