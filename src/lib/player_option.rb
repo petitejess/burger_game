@@ -67,7 +67,7 @@ class PlayerOption
       # Ask for quantity
       puts "How many \"#{item}\"? (Enter 0 to 5)"
       # Quantity input validation loop
-      while quantity = gets.strip do
+      while quantity = $stdin.gets.strip do
         # Must be a whole number 0 to 5
         if (quantity =~ /^[0-5]$/)
           break

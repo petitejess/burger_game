@@ -586,12 +586,45 @@ Another way to install this app is by using the bash script.
 3. Run script to install and run the app the first time:
 
     ```
-    ./install.sh
+    ./install.sh [OPTION]
     ```
     - The next time you want to only run the game (no need to install again), just run the script:
       ```
-      ./burger_game.sh
+      ./burger_game.sh [OPTION]
       ```
+
+**Options** available:
+
+Usage (bash script - install game): ./install.sh [*OPTION*]
+
+Usage (bash script - run game): ./burger_game.sh [*OPTION*]
+
+- -h, --help:
+  - Print this Help menu for Burger Game.
+- -m, --money [*TARGET_MONEY*]
+  - Change TARGET_MONEY. The lower the value, the easier to WIN. Default is 50. Enter number 10 to 99.
+- -r, --reputation [*MAX_REPUTATION*]
+  - Change MAX_REPUTATION. The lower the value, the easier to GAME OVER. Default is 10. Enter number 1 to 10.
+
+Examples:
+
+- To view Help menu:
+
+  ```
+  ./burger_game.sh -h
+  ```
+- To set *TARGET_MONEY*:
+  ```
+  ./burger_game.sh -m 30
+  ```
+- To set *MAX_REPUTATION*:
+  ```
+  ./burger_game.sh -r 5
+  ```
+- To set both *TARGET_MONEY* and *MAX_REPUTATION*:
+  ```
+  ./burger_game.sh -m 30 -r 5
+  ```
 
 &nbsp;  
 &nbsp;  

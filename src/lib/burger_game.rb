@@ -154,6 +154,8 @@ class BurgerGame
       puts
       screen.go_to_next
 
+      ARGV.clear
+
       # Feature 4: Selectable options for list of ingredients, so no manual entry (typing) is needed.
       # Quantity input as integer within a pre-set range.
       # Display player's options
