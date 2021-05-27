@@ -110,7 +110,7 @@ class ScreenMessage
 
   def display_win
     title = "   YOU WIN   "
-    msg = "Ruby Burger has reached its goal!\n\nAll thanks to you and your brilliant burger stacking skill.\nNow is time to celebrate and give yourself a reward..." + "\n\n"
+    msg = "Ruby Burger has reached its goal!\n\nAll thanks to you and your brilliant burger stacking skill.\nNow is the time to celebrate and give yourself a reward..." + "\n\n"
     msg += "A burger... and chips!" + "\n\n"
 
     msg += "                            |\\ /| /|_/|" + "\n"

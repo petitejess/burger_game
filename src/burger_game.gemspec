@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = "burger_game"
-  s.version       = "1.1.1"
+  s.version       = "1.1.2"
   s.summary       = "A Ruby Burger Game"
   s.description   = "A simple text-based Ruby terminal game, that simulates a burger shop, where you need to build the meal for the customers with different requests and preferences."
   s.authors       = ["Jessica Gozali"]
