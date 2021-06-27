@@ -1,4 +1,4 @@
-# Software Development Plan: Burger Game
+# Burger Game
 
 >
 > GitHub repository link: [https://github.com/petitejess/burger_game.git](https://github.com/petitejess/burger_game.git)
